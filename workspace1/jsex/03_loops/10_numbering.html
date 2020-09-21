@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum">
+	<button onclick="box()">눌러봐</button>
+	<p id="res1"></p>
+	<p id="res2"></p>
+	<p id="res3"></p>
+	<p id="res4"></p>
+
+	<script>
+		var trial = 0;
+		var score = 0;
+		function box(){
+			if(trial>9){
+				// document.write("게임종료");
+				document.getElementById("res4").innerHTML = "게임종료";
+			}
+			else{
+				var num = document.getElementById("myNum").value;
+				var x = num-1;
+				var y = num +1;
+
+				rnum = Math.floor(Math.random()*9)+1; //0 ~ 1 사이에 소수점을 줌
+
+				if(num == rnum){
+					score += 3;
+				}
+				else if((rnum == x) || (rnum == y)){
+					score += 1;
+				}
+				else{
+					score += 0;
+				}
+				document.getElementById("res3").innerHTML = "답" + rnum;
+				trial++;
+			}
+			document.getElementById("res1").innerHTML = "총 횟수" + trial;
+			document.getElementById("res2").innerHTML = "현재 점수" + score;
+		}
+
+		</script>
+	</body>
+	</html>

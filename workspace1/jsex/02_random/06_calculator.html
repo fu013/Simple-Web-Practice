@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<input type="number" id="myNum1">
+	<input type="string" id="mytaste">
+	<input type="number" id="myNum2">
+	<button onclick="box()">결과값</button>
+	<p id="res"></p>
+</head>
+<body>
+	<script>
+		function box(){
+			var num1 = document.getElementById("myNum1").value;
+			var taste = document.getElementById("mytaste").value;
+			var num2 = document.getElementById("myNum2").value;
+
+			if(taste == "+"){
+				result = Number(num1) + Number(num2);
+			}
+			else if(taste == "-"){
+				result = Number(num1) - Number(num2);
+			}
+			else if(taste == "*"){
+				result = Number(num1) * Number(num2);
+			}
+			else if(taste == "/"){
+				result = Number(num1) / Number(num2);
+			}
+			else if(taste == "%"){
+				result = Number(num1) % Number(num2);
+			}
+			document.getElementById("res").innerHTML = result;
+		}
+	</script>
+</body>
+</html>

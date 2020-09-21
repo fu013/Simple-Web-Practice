@@ -1,0 +1,34 @@
+<?php 
+$ham = 4.95;
+$choco = 1.95;
+$cola = 0.85;
+$total = 0;
+$tax = 0;
+$tip = 0;
+$num1 = 0.075;
+$num2 = 0.16;
+
+$ham = $ham * 2;
+$choco = $choco;
+$cola = $cola;
+$total = $ham + $choco + $cola;
+$tax = $total * $num1;
+$tip = $total * $num2;
+
+echo "ham : $ham <br>";
+echo "choco : $choco <br>";
+echo "cola : $cola <br>";
+echo "total : $total <br>";
+echo "tax : $tax <br>";
+echo "tip : $tip <br>";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>first php</title>
+</head>
+<body>
+	<h1><?php echo $result; ?></h1>
+	
+</body>
+</html>

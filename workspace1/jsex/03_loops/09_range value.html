@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+   <input type="number" id="myNum1" placeholder="범위 값">
+   <input type="number" id="myNum2" placeholder="x의 값">
+   <button onclick="box()">출력</button>
+   <p id="res"></p>
+
+   <script>
+      function box(){
+         var num1 = document.getElementById("myNum1").value;
+         var num2 = document.getElementById("myNum2").value;
+         var x = parseInt(num1);
+         var y = parseInt(num2);
+         // var o=0;
+         // var i =0;
+
+         // while(x>=i){
+         //    o++;
+         //    i += y;
+         // }
+         // document.write(o-1);
+
+
+         var o=1;
+         for(var i=y; i<=x; i+=y){
+            result = y * o;
+            o++;
+            document.write(result);
+         }
+         document.write(o-1);
+         // num2 *= 2;
+         // document.getElementById("res1").innerHTML = result;
+      }
+   </script>
+</body>
+</html>

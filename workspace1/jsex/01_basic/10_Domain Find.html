@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		// var domain = str.substring(13,18);
+		// var email = "sunghyun0624@naver.com";
+		var email = "hyun0624@daum.net";
+		var a = email.indexOf("@");
+		var b = email.indexOf(".");
+		var c = email.substring(a+1, b);
+
+		var d = email.substr(0);
+		var e = email.substring(d, a);
+
+		document.write("도메인값: " + c + "<br>" + "아이디값: " + e);
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?php 
+$dan = (int)$_POST['dan'];
+?>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>03_gugudan.php</title>
+</head>
+<body>
+   <h1>구구단을 외자~!~!~!~!</h1>
+   <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+      <input type="number" name="dan">
+      <input type="submit" value="SUBMIT">
+   </form>
+   <?php
+   if ($dan > 0) {   
+      $i=1;
+      while ($i < 10) {
+         echo "<h1>".$dan."x".$i." = ".($dan*$i)."</h1>";
+         $i++;
+      }
+   }
+   ?>
+</body>
+</html>

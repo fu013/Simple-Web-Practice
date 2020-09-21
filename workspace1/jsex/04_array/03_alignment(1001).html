@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id="res"></p>
+	<p id="res2"></p>
+	<p id="res3"></p>
+	<p id="res4"></p>
+
+	<script>
+		var arrNum = [45, 24, 6, 20, 13, 2];
+		var x;
+
+		for(var i =0; i <arrNum.length-1; i++){
+			for(var j =i+1; j< arrNum.length; j++){
+				if(arrNum[i] > arrNum[j]){
+					x = arrNum[i];
+					arrNum[i] = arrNum[j];
+					arrNum[j] = x;
+				}
+			}
+		}
+		document.getElementById("res").innerHTML = arrNum;
+
+		for(var i =0; i <arrNum.length; i++){
+			for(var j =i+1; j < arrNum.length; j++){
+
+				if(arrNum[i] < arrNum[j]){
+					x = arrNum[i];
+					arrNum[i] = arrNum[j];
+					arrNum[j] = x;
+				}
+			}
+		}
+		document.getElementById("res2").innerHTML = arrNum;
+
+		var z = arrNum[0];
+		document.getElementById("res3").innerHTML = z;
+		var z = arrNum[5];
+		document.getElementById("res4").innerHTML = z;
+	</script>
+</body>
+</html>

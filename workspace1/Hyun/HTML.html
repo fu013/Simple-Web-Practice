@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background: url(../Images/wall.jpg) no-repeat center fixed;
+			background-size: 100% 100%;
+			margin:0;
+		}
+		#box1{
+			position: relative;
+			width: 100%;
+			height: 100px;
+			/*background-color:green;*/
+		}
+		#box1 h3{
+			position: absolute;
+			margin:0;
+			left: 2%;
+			top:50%;
+			transform: translateY(-50%);
+		}
+		#box1 h2{
+			position: absolute;
+			right: 0;
+			margin:0;
+			top:50%;
+			transform: translateY(-50%);
+			margin-right: 30px;
+			word-spacing: 10px;
+			/*white-space: nowrap;*/
+		}
+		#box1 h2 a{
+			color: green;
+			text-decoration: none;
+		}
+		#box1 h2 a:hover{
+			color: pink;
+			text-decoration: none;
+		}
+		#box2{
+			position: absolute;
+			width: 100%;
+			height: 600px;
+			background-color: none;
+		}
+		#box3{
+			color: skyblue;
+			/*overflow: scroll;*/
+			/*position: absolute;*/
+			float: left;
+			margin:0;
+			background-color: none;
+			width: 10%;
+			height: 600px;
+			margin-left: 2%;
+		}
+		#box3 a{
+			color: skyblue;
+			margin:0;
+			text-decoration: none;
+			white-space: nowrap;
+		}
+		#box3 a:hover{
+			color: pink;
+		}
+		#box3 h1, h2{
+			margin:0;
+		}
+		#box4{
+			/*position: absolute;*/
+			width: 80%;
+			float: left;
+			height: 600px;
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<h3>Seong Hyun's Homepage</h3>
+		<h2><a href="Home.html">Home</a> <a href="HTML.html">HTML</a> <a href="CSS.html">CSS</a> <a href="JS.html">JAVASCRIPT</a></h2>
+	</div>
+	<div id="box2">
+		<div id="box3">
+			<h1>HTML</h1>
+			<br>
+			<h2>1st</h2>
+			<a href="../htmlex/1st/01_setting.html" target="a">First Setting</a><br>
+			<br>
+
+			<h2>2nd</h2>
+			<a href="../htmlex/2nd/01_anchors.html" target="a">Anchor Tags</a><br>
+			<a href="../htmlex/2nd/02_images.html" target="a">Image Tags</a><br>
+			<a href="../htmlex/2nd/03_imageForRes.html" target="a">Image For Res </a><br>
+			<a href="../htmlex/2nd/04_table.html" target="a">Table </a><br>
+			<a href="../htmlex/2nd/05_list.html" target="a">List </a><br>
+			<a href="../htmlex/2nd/06_grouping.html" target="a">Grouping </a><br>
+			<a href="../htmlex/2nd/07_iframe.html" target="a">Iframe </a><br>
+			<br>
+
+			<h2>3rd</h2>
+			<a href="../htmlex/3rd/01_formBasic.html" target="a">FormBasic</a><br>
+			<a href="../htmlex/3rd/02_inputs.html" target="a">Inputs </a><br>
+			<a href="../htmlex/3rd/03_formOthers.html" target="a">FormOthers </a><br>
+			<a href="../htmlex/3rd/Create Account.html" target="a">Practice1</a><br>
+			<a href="../htmlex/3rd/Join membership.html" target="a">Practice2</a><br>
+			<br>
+			
+			<h2>4th</h2>
+			<a href="../htmlex/4th/01_media.html" target="a">Media</a><br>
+			<br>
+		</div>
+		<div id="box4">
+			<iframe src="" width="100%" height="600px" scrolling="yes" name="a"></iframe>
+		</div>
+	</div>
+</body>
+</html>

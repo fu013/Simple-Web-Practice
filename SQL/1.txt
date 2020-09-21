@@ -1,0 +1,418 @@
+sql에 칠 때 큰따옴표 아니라 작은 따옴표 써도됨
+insert into kmove values(학번, “이름”, 나이, “학과”, “번호”, “생년월일”);
+insert into kmove(std_no, name) values(201437041, "최현범");
+insert into kmove(std_no, name) values(,), (,) ~~~~~;
+
+1.전체조회
+select * from kmove;
+2. 칼럼기준조회
+select std_no, name from kmove;
+3. row 기준조회 (특정data선정)                 (and)
+select std_no, name from kmove where age=25 or name='최현범‘;
+
+modify 수정
+
+update kmove set std_no=201712805 where name="신수연";
+
+지우기
+Remove
+
+delete from kmove; 전부삭제
+
+delete form kmove where std_no= 5;
+
+
+mgr 상사의 직원번호
+salary
+커미션?
+부서번호
+
+primary key ("칼럼명");
+
+프라이머리 키는
+
+not null + unique
+
+지정하고싶으면 값이 무조건 존재해야 하고 하나라도 중복된값이 있으면 안됨
+
+emp 에서 sal이 2975보다 큰사람을 찾는 연산식
+
+SELECT empno,ename,job,sal FROM emp where sal > 2975;
+
+sal 에 12를 곱하여 연봉을 계산하는 계산식
+
+SELECT empno,ename,sal,(sal*12) from emp 
+
+as 를 이용하여 칼럼의 이름을 바꾸는 형식도 가능하다.
+
+SELECT empno,ename,sal,(sal*12) as Annual from emp
+
+예제로 나온 스콧이라는 사람의 셀러리를 다른것과 비교하려했을때는 ()를 사용하여 비교할수있다.
+예)<, >, <=, >=, /, *...등등
+
+SELECT empno,ename, sal from emp where sal < (SELECT sal from emp where ename ="SCOTT"); 
+
+3000이 아닌것을 고르는 연산자는 <>를 이용하여 나타낸다.
+
+SELECT empno,ename,sal from emp where sal <> 3000;
+
+1000과 3000사이의 숫자들을 찾는 연산자 초과와 미만을 사용하여 1000과 3000 본연의 수는 나오지않음
+
+SELECT empno,ename,sal from emp where sal > 1000 and sal < 3000;
+
+1000과 3000사이의 숫자들을 찾는 연산자 이상과 이하를 사용하여 본연의수와 함께 나옴
+
+SELECT empno,ename,sal from emp where sal BETWEEN 1000 and 3000;
+
+"와일드 카드"
+내가 찾고싶은 정보가 잘 기억이 나질않을때 사용하는 구문
+
+SELECT * from emp where ename like 's%';
+
+좀더 자세하게, 첫번째이름은S 마지막 두번째이름이 T 일 경우 이런식으로 찾을수있다
+
+SELECT * from emp where ename like 'S%' and ename like '%T_';
+
+
+나는 사원정보가 알고싶다.
+
+스콧, 포드, 클락 3명의 정보를 알고싶어용
+
+이렇게 치시면됩니다. in 연산자 라고 합니다.
+
+SELECT * from emp where ename IN('SCOTT','CLARK','FORD');
+
+11/22일 과제 !
+
+답: 1. SELECT * from emp where name like '%S';
+     2.select empno, ename, job, sal, deptno from emp where deptno >= 30 and job="salesman"
+     3. SELECT EMPNO,ENAME,JOB,SAL,DEPTNO FROM emp where deptno >= 20 AND sal > 2000
+     3-1. SELECT * from emp where DEPTNO IN(20,30) AND SAL > 2000;
+     4. SELECT * FROM EMP WHERE SAL<2000 or SAL>3000;
+     5.SELECT EMPNO, ENAME, SAL, DEPTNO FROM `EMP` WHERE ENAME LIKE "%E%" AND (sal NOT BETWEEN 1000 AND 2000) AND DEPTNO=30;
+     6.SELECT * FROM `EMP` WHERE (JOB="manager" or JOB="clerk") AND (MGR is not null) AND (comm is null) AND ENAME not like '%L';
+
+원하는 테이블을 오름차순으로 바꾸고싶을때 
+
+순위출력
+select empno, ename, sal from emp where sal>0 order by sal asc;
+오름차순
+select * from emp where sal>0 order by sal asc, ename asc;
+내림차순
+SELECT * FROM emp WHERE sal > 0 ORDER BY sal DESC, ENAME asc;
+(칼럼 순서 번호로도 순서를 정할수있습니다!)
+SELECT * FROM emp WHERE sal > 0 ORDER BY 1 desc;
+
+쿼리의 99%가 테이블을 우선적으로 읽어낸다.
+그다음 출력>>정렬 order by는 마지막에 적용이되는 조건이당.
+
+null은 연산이불가능합니다.
+
+
+내림차순일경우 위에서 3명만 뽑을때 리미트를 사용하여 사용합니다.
+
+SELECT * FROM `emp` ORDER BY sal DESC LIMIT 3;
+
+인덱스 번호를 기준으로 갯수로 뽑을수도있다.
+ex) SELECT * FROM `emp` ORDER BY SAL LIMIT 5, 5;
+
+
+Q1테이블에서  급여를 가장 많이받는사람
+
+ename  job 최소급여의 2개 출력 
+
+Q2테이블에서 급여를 가장 적게받는사람 2개출력
+
+
+Q3현재 테이블의 샐러리의 평균값 
+
+직업은 매니저들
+
+
+첫번째 문제
+SELECT ename, job, sal FROM emp where sal = (SELECT max(sal) FROM emp); (급여를 가장 많이받는 사람)
+
+두번쨰 문제
+SELECT ename, job, sal FROM emp where sal = (SELECT min(sal) FROM emp); (급여를 가장 적게받는 사람)
+
+3번째 문제
+SELECT avg(sal) as AVERAGE from emp where job = upper('manager'); 매니저들의 평균 급여값
+
+deptno 를 기준으로 그룹화하여 오름차순 횟수를 세준다.(지금까지는 테이블내에 데이터를 가져왔지만 이경우는 새로 만들어서 사용)
+
+SELECT DEPTNO, COUNT(empno) FROM emp GROUP by DEPTNO order by DEPTNO;
+
+부서별 평균 급여를 구할수있는 식을 확인해보자
+
+SELECT DEPTNO, AVG(sal) FROM emp GROUP by DEPTNO order by DEPTNO;
+
+
+
+
+☆☆☆sql 문 작동순서 매우중요함!!!!☆☆☆
+
+1.from >> where>> group by >>having>>  select >> order by
+
+
+
+
+
+부서별 매니저들의 급여의 평균을 구하는 식 group by 를 이용하여
+
+SELECT DEPTNO, AVG(sal) FROM emp where job='MANAGER' GROUP by DEPTNO ORDER BY DEPTNO;
+
+부서별 평균값을 emp에서 구하게된다음 그룹바이를 하고 부서별 평균 급여가 2850보다 큰사람들을 빼와라
+
+SELECT DEPTNO, avg(sal) FROM emp GROUP by DEPTNO HAVING AVG(sal) > 2850;
+
+부서별 평균값을 emp에서 구하게된다음 그룹바이를 하고 부서별 평균 급여가 2850보다 큰 매니저들의 급여를 빼와라
+
+SELECT DEPTNO, avg(sal) FROM emp WHERE JOB='MANAGER' GROUP by DEPTNO HAVING AVG(sal) > 2850;
+
+문제.
+emp테이블로 부터 커미션이 없는 사람들을 직업별로 묶습니다.
+직업별로 묶은것중에, 직업이 세일즈맨들의 총 인원수
+
+답: select job, count(EMPNO) from emp where comm is not null GROUP by JOB HAVING job='salesman'
+
+
+세일즈 맨 들에게 null값인사람이 없기 떄문에 밑에있는 예제는 아무것도 나오지않는다.
+
+select job, count(EMPNO) from emp where comm is null GROUP by JOB HAVING job='salesman';
+
+
+select job, count(EMPNO) from emp where comm is null GROUP by JOB HAVING job='CLERK';
+
+select job, count(EMPNO) from emp where comm is null GROUP by JOB HAVING job;
+
+w3c 가면 마이sql 펑션스 마이sql 의 문자관련, 숫자관련, 데이트 관련 ,나머지 펑션에대해서 한번씩 둘러보기
+데이터베이스의 데이트관련 펑션에대해서 확인해올것 
+
+문자열
+
+숫자관련함수
+
+데이트 관련 펑션
+time format
+data format 옵션 미국이 사용하는 형식과 한국이 쓰는 형식을 조사해오기
+
+advance 
+ifnull사용방법
+nullif사용방법 및 두가지의 차이
+
+
+
+
+<h1>comcat</h1>
+CONCAT()은 다음과 같이 사용한다.
+SELECT concat(EMPNO,ENAME) FROM emp where JOB ='MANAGER';
+CONCAT(문자열1, 문자열2, 문자열3, ...)
+문자열1, 문자열2, 문자열3...를 결합한다. Oracle의 CONCAT()에는 두개의 매개 변수가 허용된다는 점에 주의한다. 즉, 한번에 두 문자열만 결합할 수 있다.
+
+
+<h1>format</h1>
+format()함수는 다음과 같이 사용한다.
+SELECT format(sal, 2) FROM `emp` WHERE 1;
+FORMAT(숫자, 소수점 자릿수)
+숫자를 지정한 소숫점 자릿수 까지만 잘라 리턴하며, 1000단위마다 콤마를 표시합니다.
+이때 지정한 자리 다음 숫자에 따라 반올림 하여 표현합니다.
+
+<h1>length</h1>
+length()함수는 다음과 같이 사용한다.
+SELECT length(ename) FROM `emp` WHERE 1;
+MySQL에서 문자열의 길이를 가져올 때, 사용하는 것이  LENGTH함수입니다.
+그렇지만, LENGTH 함수는 문자의 Byte길이를 가져오기 때문에 한글은 정확한 길이를 알 수 없습니다.
+그래서 한글의 경우 CHAR_LENGTH 함수를 사용합니다.
+
+<h1>lower</h1>
+lower()함수는 다음과 같이 사용한다.
+SELECT lower(ename) FROM `emp` WHERE 1;
+mysql 에서 대문자를 소문자로 변경하고 싶을떄 사용하는것이 lower함수입니다.
+같은 맥락으로 upper()를 사용하게될경우 소문자를 대문자로 변경하는것이 가능합니다.
+
+<h1>lpad, rpad</h1>
+lpad(), rpad() 함수는 다음과 같이 사용한다.
+LPAD(원본문자열 , 원하는 자리수, 채울 문자열)
+SELECT lpad(DEPTNO,'10','0') FROM `emp` WHERE 1;
+LPAD : 왼쪽에 특정문자를 원하는 자리수만큼 채워서 반환
+RPAD : 오른쪽에 특정문자를 원하는 자리수만큼 채워서 반환
+
+
+<h1>replace</h1>
+replace() 함수는 다음과 같이 사용한다.
+SELECT replace(JOB,'CLERK','CEO') FROM emp where 1;
+REPLACE('문자열', '치환할 문자열', '치환될 문자열')
+SQL에서 함수 Replace는 하나의 필드 데이터의 일부를 치환하는데 사용된다.
+**현범이형한테 질문할것**
+
+<h1>repeat</h1>
+repeat() 함수는 다음과 같이 사용한다.
+SELECT repeat(ename,2) from emp where 1;
+REPEAT(문자열, 반복횟수)
+SQL 의 문자열을 반복하게끔 사용할수있는 함수이다.
+
+
+<h1>substr, substring</h1>
+substr() 함수는 다음과 같이 사용한다.
+SELECT substr(ename,2,5) FROM `emp` WHERE 1
+substring(컬럼 또는 문자열, 시작위치, 길이);
+SQL에서 함수 substring은 하나의 필드 데이터의 일부를 읽는데 사용된다. 데이터베이스에 의해 이 함수명이 다르다.
+
+MySQL : SUBSTR(), SUBSTRING()
+Oracle : SUBSTR()
+SQL Server : SUBSTRING()
+
+
+<h1>truncate</h1>
+truncate() 함수는 다음과 같이 사용한다
+SELECT TRUNCATE(4.258, 2) FROM `emp` WHERE 1
+TRUNCATE(숫자,버릴 자릿수) - 숫자를 버릴 자릿수 아래로 버림
+함께 사용하는 함수로는 round()함수가 있다.
+
+
+<h1>datediff</h1>  컬럼의 하이어데이트끼리 비교하려면 어떻게 해야할까?
+datadiff() 은 다음과 같이 사용한다.
+SELECT datediff('1970-01-01', '2019-11-26') FROM emp ;
+DATEDIFF(날짜1, 날짜2);
+MySQL에서 두 날짜간의 차이를 가져올 때 사용하는 함수가 두 가지가 있습니다.
+단순히 일 차이를 가져올 때 사용하는 것이 DATEDIFF 함수입니다.
+
+TIMESTAMPDIFF()는 다음과 같이 사용된다.
+SELECT TIMESTAMPDIFF(SECOND, '1970-01-01', '2019-11-26') from emp where 1;
+TIMESTAMPDIFF(단위, 날짜1, 날짜2);
+종류)second, minute, hour, day, week, month, quarter 의 식으로 나눌수있다.
+timestampdiff() 함수는 datediff와 유사하지만 좀더 정확한 정보를 지정하여 가져올수있는 함수이다.
+date diff 와 다르게 차이를 연, 분기, 월, 주, 일, 시, 분, 초 세분화하여 가져올수있다.
+
+
+<h1>now</h1>
+now() 는 다음과 같이 사용한다.
+SELECT NOW() FROM emp where1
+MySQL에서 현재 시간을 값이 필요한 경우가 있습니다.
+이 때 사용하는 함수가 NOW 함수입니다.
+NOW 함수는 현재 MySQL 서버의 시간 값을 가져오는 함수입니다.
+
+
+<h1>date_format</h1>
+date_format은 다음과같이 사용한다.
+SELECT DATE_FORMAT(NOW(), "%Y %c/%e %r") FROM emp WHERE 1;
+data_format은 자기가 원하는데로 시간의 형태를 바꿀수있는 함수입니다.
+
+
+<h1>time_format</h1>
+TIME_FORMAT(time,format)
+이 함수는 DATE_FORMAT() 함수처럼 사용되지만, format 문자열은 시, 분, 초에 관련된 지정자만을 포함할 수 있다. 다른 지정자들은 NULL 값이나 '0'을 발생한다.
+time 값이 TIME 부분에서 23보다 큰 값을 갖는다면, %H와 %k 시간 지정자는 일상적인 범위 0-23보다 더 큰 값을 발생한다. 다른 시간 지정자들은 12 법(modulo)의 값을 발생한다.
+
+<h1>ifnull</h1>
+ifnull() 은 다음과 같이 사용한다.
+SELECT ifnull(null,200) from emp where 1;
+ifnull은 첫번째 값이 null일경우 두번째인 200의 값을 내보내는 함수입니다.
+마찬가지로 첫번쨰값이 200이고 두번째값이 null일경우 첫번째값인 200을 내보내게 됩니다.
+
+<h1>nullif</h1>
+nullif() 은 다음과 같이 사용한다.
+SELECT nullif(25,25) from emp where 1;
+nullif는 두개의 값이 서로 같다면 null을 내보내는 함수입니다.
+첫번째값과 두번째 값이 다를경우 첫번째로 나온 값을 내보내는 함수입니다.
+
+
+
+not null
+unique 이곳의 값은 중복이 되면 안됀다.
+primary key null  값을 허용하지않으면서 그 값은 중복이 되면 안됀다.
+foreign key 이 칼럼의 데이터가 다른 테이블의 칼럼과 연관이있다. (다른테이블에서 참조하여 데이터가 나가게된다.)
+check 숫자가 들어오기로했는데 4자리 이상 넘어가면안됀다. 정해놓은다면 숫자 4자리가 넘어가는지 체크하라 라는 뜻.(정말 중요하게 체크되는 칼럼만 체크되는 경향이 있음!)
+index 찾는 방식을 결정해놓은게 인덱스이다. ex)가격, 생산지 등등.. 
+
+
+emp 테이블에서 empno과 ename sal sal 그리드라는 alias라는 것으로 1000이하면 D, 1000~2000 C, 2000 ~ 3000 B, 3000< A
+
+SELECT EMPNO, ENAME, SAL, 
+CASE 
+WHEN sal < 1000 THEN "D" 
+WHEN sal >= 1000 and sal <= 2000 THEN "C" 
+WHEN sal >= 2000 AND sal <= 3000 THEN "B" 
+WHEN sal >= 3000 THEN "A" 
+ELSE "A+" 
+END AS salgrade 
+from emp;
+
+
+두개의 정보의 테이블을 row로 결합시킨후에 정보검색후 빼옴
+
+다른 테이블과 연결시키는것을 join이라고 한다. ex)
+SELECT EMPNO, ENAME,JOB ,emp.DEPTNO ,dname ,loc FROM EMP, dept WHERE job='manager' and emp.DEPTNO = dept.DEPTNO;
+
+emp 와 dept 를 알리아스로 묶은다음 사용할수도 있다.  ex)
+SSELECT EMPNO, ENAME, JOB ,e.DEPTNO ,dname ,loc FROM EMP e , dept d WHERE job='manager' and e.DEPTNO = d.DEPTNO;
+
+요즘사용하는 join!
+SELECT EMPNO, ENAME, JOB, emp.DEPTNO, dname, loc 
+FROM emp INNER JOIN DEPT on emp.DEPTNO = dept.DEPTNO where job='manager';
+
+이러한경우는 equi join 이라고합니다
+select empno, ename, job, e.deptno, dname, loc from emp e inner join dept d on e.deptno = d.deptno where job ="manager";
+네츄럴 조인을 사용했을경우
+select empno, ename, job, e.deptno, dname, loc from emp e NATURAL JOIN dept d where job ="manager";
+
+이런 경우는 non equi join 이라고 칭합니다.
+SELECT empno, ename, sal, grade from emp ,salgrade WHERE sal BETWEEN losal and hisal;
+                                   
+위에서와 똑같이 알리아스를 사용하여 만들수도있습니다.
+SELECT e.empno, e.ename, e.sal, s.grade from emp e ,salgrade s WHERE e.sal BETWEEN s.losal and s.hisal;
+
+self조인 사용법입니다.
+SELECT e1.empno, e1.ename, e1.mgr, e2.empno AS mgr_empno, e2.ename as mgr_name from emp e1, emp e2 WHERE e1.mgr = e2.EMPNO;
+
+
+SELECT empno, ename, deptno, (SELECT dname FROM dept WHERE emp.DEPTNO = dept.DEPTNO) as result from emp
+
+
+
+SELECT empno, ename, sal FROM (SELECT EMPNO, ENAME,SAL FROM emp where sal > 1500) e INNER JOIN dept d on e.deptno= d.DEPTNO;
+
+SELECT empno, ename, sal FROM (SELECT EMPNO, ENAME,SAL,DEPTNO FROM emp where sal > 1500) e INNER JOIN dept d on e.deptno= d.DEPTNO;
+
+크리에이트 절의 서브 쿼리 사용법 
+CREATE TABLE emp_copy AS SELECT empno, ename, job, sal, deptno from emp where mgr is not null
+
+인설트절의서브쿼리 사용법 values는 사용하지않는다.(오라클의 경우에는 사용합니다!)
+insert into emp_copy SELECT empno, ename, job, sal, deptno FROM emp where ename='king';
+
+업데이트절에서 사용하는 서브쿼리사용밥 ex)
+UPDATE emp_copy set sal=(SELECT sal from emp WHERE ename='king') where sal < 1000;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

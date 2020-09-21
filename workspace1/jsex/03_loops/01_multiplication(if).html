@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum">
+	<button onclick="box()">구구단 출력</button>
+	<p id="res"></p>
+
+	<script>
+		function box(){
+			var num = document.getElementById("myNum").value;
+			var i = 1;
+			var text = "";
+
+			if(num>=1){
+				for(i= 1; i < 10; i++){
+					var x = (i*num);
+
+					text += "<br>" + num + "*" + i + "=" + x;
+				}
+				document.getElementById("res").innerHTML = text;
+			}
+			else{
+				document.getElementById("res").innerHTML = "다시 입력하세요!!";	
+			}
+		}
+	</script>
+</body>
+</html>

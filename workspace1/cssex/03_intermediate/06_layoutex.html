@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>06_layoutex.html</title>
+	<style>
+		@font-face{
+			font-family:myFont;
+			src:url(fonts/LexendZetta-Regular.ttf);
+
+		}
+		*{
+			font-family: myFont;
+		}
+
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		header, nav, footer{
+			width: 100%;
+			text-align: center;
+		}
+		header{
+			height: 100px;
+			background-color: purple;
+			padding: 5px;
+		}
+		header h1{
+			margin-top: 10px;
+		}
+		nav{
+			height: 50px;
+			background-color: lightgray;
+		}
+		nav ul{
+			margin: 0;
+			padding: 10;
+			text-align: center;
+			background-color: none;
+		}
+		nav ul li{
+			display: inline;
+			letter-spacing: 5px;
+			margin: 0 50px 0 0;
+			padding: auto;
+		}
+		nav ul li a{
+			text-decoration: none;
+			font-size: 1.5em;
+		}
+		nav ul li a:hover{
+			background-color: darkgray;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		aside{
+			float: left;
+			width: 25%;
+			height: 300px;
+			background-color: orange;
+		}
+		aside h2{
+			margin-left;
+			margin-top: 5px;
+		}
+		aside img{
+			/*어사이드 안에있는 이미지태그는*/
+			width: 30%;
+			height: 30%;
+		}
+		section{
+			float: left;
+			width:50%;
+			height: 300px;
+			background-color: yellow;
+		}
+		article{
+			margin-left: 20px;
+		}
+		fieldset{
+			margin: 10px 20px;
+		}
+
+		footer{
+			height: 50px;
+			color: white;
+			background-color: brown;
+			clear: both;
+			padding: 1px 0;
+		}
+		footer > h3{
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>My Blog Page</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#">HTML5</a></li>
+			<li><a href="#">CSS3</a></li>
+			<li><a href="#">JS</a></li>
+			<li><a href="#">MORE</a></li>
+		</ul>
+	</nav>
+	<aside>
+		<h2>Links</h2>
+		<ul>
+			<li><a href="#">W3c</a></li>
+			<li><a href="#">123</a></li>
+			<li><a href="#">123</a></li>
+		</ul>
+		<figure>
+			<img src="../../Images/honggildong.jpg">
+			<figcaption>HongGilDong</figcaption>
+		</figure>
+	</aside>
+	<section>
+		<article>
+			<h3>Semantic Tag</h3>
+			<p>But behind the scenes, a well-established and stress-tested system made up of the White House, the Senate and a constellation of outside conservative judicial groups stands ready to replace her if she steps down before the presidential election.</p>
+		</article>
+		<article>
+			<h3>Div & Span</h3>
+			<p>But behind the scenes, a well-established and stress-tested system made up of the White House, the Senate and a constellation of outside conservative judicial groups stands ready to replace her if she steps down before the presidential election.</p>
+		</article>
+
+	</section>
+
+	<aside>
+		<fieldset>
+			<legend>Login</legend>
+			<form>
+				<label>ID: </label>
+				<input type="text" name=""><br>
+				<label>PW: </label>
+				<input type="password" name="">
+			</form>
+		</fieldset>
+	</aside>
+	<footer>
+		<h3>Copyright (c) 2019 </h3>
+	</footer>
+</body>
+</html>

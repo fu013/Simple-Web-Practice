@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>수료하기까지 남은 일수: <span id="end"></span></h1>
+	<script>
+		var start = new Date();
+		var end = new Date("12/27/2019");
+		var x= ((((end-start)/1000)/60)/60)/24;
+		var y = x.toFixed();
+		var y1 = parseInt(y);
+		document.getElementById("end").innerHTML = (y1+1) + "일";
+	</script>
+</body>
+</html>

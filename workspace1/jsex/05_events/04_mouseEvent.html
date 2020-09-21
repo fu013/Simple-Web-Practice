@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>04_mouseEvent.html</title>
+	<style>
+		#target {
+			border: 1px solid black;
+			width: 500px;
+			height: 200px;
+			font-size: 2em;
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<p id="target">Click Here!!!</p>
+	<script>
+		document.getElementById("target").addEventListener("mousedown", mouseDown);
+		document.getElementById("target").addEventListener("mouseup", mouseUp);
+
+		function mouseDown(){
+			document.getElementById("target").innerHTML = "This is status to click mouse on";
+		}
+		function mouseUp(){
+			document.getElementById("target").innerHTML = "This is status to click mouse off";
+		}
+	</script>
+</body>
+</html>

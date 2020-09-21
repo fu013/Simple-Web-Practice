@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum">
+	<button onclick="box()">입력한 수까지의 합</button>
+	<p id="res"></p>
+	<script>
+		function box(){
+			var num = document.getElementById("myNum").value;
+			var x = Number(num) + Number(1);
+
+			result = (num * x) * 0.5 ;
+			
+			document.getElementById("res").innerHTML = result;
+		}
+	</script>
+</body>
+</html>

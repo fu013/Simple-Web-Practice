@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>02_onloadEx.html</title>
+	<script>
+		// alert("Process - 0");
+		window.onload = function(){
+			alert("Process - 0"); // window에있는 태그들이 모두 읽히면 ==onload
+		}
+	</script>
+</head>
+<body>
+	<h1>Process - 1</h1>
+	<script>alert("Process - 1");</script>
+	<h1>Process - 2</h1>
+	<script>alert("Process - 2");</script>
+</body>
+</html>

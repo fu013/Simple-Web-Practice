@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>회원가입</title>
+</head>
+<body>
+	<TABLE width = "80%" height = "300" border = "1">
+		<tr>
+			<td colspan="2">
+				<ul style="list-style-type: circle;">
+				<li><h1>회원가입 | Member Private Information</h1></li>
+				</ul>
+			</td>
+			<td>약관동의 실명확인 회원가입 정보수정</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<ul style="list-style-type: square;">
+				<li><h2>기본정보 입력</h2></li>
+				</ul>
+			</td>
+			<td>표시는 필수항목이므로 반드시 입력해야 합니다.</td>
+		</tr>
+
+		
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>아이디</li></div></ul></td>
+			<td colspan="2"><input type="text" name="아이디" ><input type="submit" value="중복 검색">영문</td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>비밀번호</li></div></ul></td>
+			<td colspan="2"><input type="password" name="비밀번호">재확인<input type="password" name="재확인"></td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>비밀번호 힌트</li></ul></td>
+			<td colspan="2"><input type="text" name="비밀번호 힌트">비번분실-조회시 참고할 내용</td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>이름(본명)</li></ul></td>
+			<td colspan="2"><input type="name" name="이름">->한글</td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>닉네임(별명)</li></ul></td>
+			<td colspan="2"><input type="name" name="닉네임"><input type="submit" value="중복 검색">한글, 영문</td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>전자메일주소</li></ul></td>
+			<td><input type="email" name="이메일"></td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>생년월일</li></ul></td>
+			<td><input type="month" name="">
+			<input type="radio" name="gender" >음<input type="radio" name="gender" >양
+			</td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul><div style="width: 100%; height: 50px; background:grey"><li>성 별</li></ul></td>
+			<td><input type="radio" name="gender" >남자<input type="radio" name="gender" >여자
+			</td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		</ul>
+
+		
+		<tr>
+			
+			<td><ul style="list-style-type: none;"><div style="width: 100%; height: 50px; background:grey">
+				<li>우편번호</li>
+				</ul>
+			</td>
+			<td colspan="2"><input type="number" name="">-<input type="number" name="">
+				<input type="submit" value="찾아보기"><br></td>
+			
+
+		</tr>
+		
+		<tr>
+			<td><ul style="list-style-type: none;"><div style="width: 100%; height: 50px; background:grey"><li>주소</li></ul></td>
+			<td><input type="text" name=""><br><input type="text" name=""><-나머지 주소</td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><div style="width: 100%; height: 50px; background:grey"><li>일반전화 번호</li></ul></td>
+			<td>
+				<select name="myChoice">
+				<option selected>국번</option>
+				</select>-<input type="number" name="">-<input type="number" name="">
+			</td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>휴대전화 번호</li></ul></td>
+			<td><select name="myChoice">
+				<option selected>국번</option>
+				</select>-<input type="number" name="">-<input type="number" name=""></td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>홈페이지</li></ul></td>
+			<td><input type="" name="" value="http://"></td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>소개, 인사말</li></ul></td> 
+			<td colspan="2"><input type="text" name="" value="반갑습니다."></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<ul style="list-style-type: square;">
+				<li><h2>추가정보 입력</h2></li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td><ul style="list-style-type: none;"><li>사진첨부</li></ul></td>
+			<td colspan="2"><input type="" name=""><input type="file" name=""><br>200*200 픽셀 이하 크기만 허용</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>이름표시 아이콘</li></ul></td>
+			<td colspan="2"><input type="" name=""><input type="file" name=""><input type="submit" value="찾아보기"><br>25*20 픽셀 이하 크기만 허용</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>혼인여부</li></ul></td>
+			<td><input type="radio" name="gender">미혼<input type="radio" name="gender">기혼<input type="radio" name="gender">이혼<input type="radio" name="gender">교제중</td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>관심분야</li></ul></td>
+			<td>
+				<select name=""><option selected>선택없음</option><option>22</option></select>
+			</td>
+			<td><input type="checkbox" name="">비공개</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>캐릭터 선택</li></ul></td>
+			<td colspan="2"><input type="" name=""><input type="submit" value="찾아보기"></td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>메일링 수신거부</li></ul></td>
+			<td colspan="2"><input type="checkbox" name="">메일링 수신 거부시 체크.</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>쪽지 수신거부</li></ul></td>
+			<td colspan="2"><input type="checkbox" name="">쪽지 수신 거부시 체크.</td>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type: none;"><li>전체 비공개</li></ul></td>
+			<td colspan="2"><input type="checkbox" name="">회원등록정보 전체 비공개시 체크.</td>
+		</tr>
+	</TABLE>
+
+</body>
+</html>

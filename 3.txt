@@ -1,0 +1,22 @@
+<?php 
+$age = 80;
+
+ $welfare = "no";
+ $youkong = "yes";
+ $after = "no";
+
+ if ($age < 3)
+ 	$fee = "free";
+ elseif (($age >= 3 && $age <= 13) || ($after == "yes"))
+ 	$fee = "4000";
+ elseif (($age>= 14 && $age <= 18) || ($age >= 70 ) || ($welfare == "yes") || ($youkong == "yes"))
+ 	$fee = "8000";
+ else 
+ 	$fee = "10000";
+
+ echo "have card : $welfare<br>";
+ echo "youkong : $youkong<br>";
+ echo "after 17pm : $after<br>";
+ echo "age : $age<br>";
+ echo "price : $fee";
+?>

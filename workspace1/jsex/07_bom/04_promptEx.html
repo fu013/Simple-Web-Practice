@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>04_promptEx.html</title>
+</head>
+<body>
+	<button onclick="myFunc()">Prompt Open</button>
+	<h1 id="result"></h1>
+
+	<script>
+		function myFunc(){
+			var person = prompt ("Input your name", "Hong gil dong");
+			if(person != null){
+				document.getElementById("result").innerHTML = "Hello" + person + "";
+			}
+		}
+	</script>
+</body>
+</html>

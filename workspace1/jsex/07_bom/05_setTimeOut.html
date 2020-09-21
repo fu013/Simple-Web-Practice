@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>05_setTimeOut.html</title>
+</head>
+<body>
+	<script>
+		function myFunc(){
+			alert("This is setTimeout Function");
+		}
+		function showAlert(){
+			setTimeout(myFunc,3000);
+		}
+		// function showAlert (){
+		// 	setTimeout(function(){
+		// 		alert("This is setTimeout Function");
+		// 	}, 3000);
+		// }
+	</script>
+	<button onclick="showAlert()">click Button</button>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<button onclick="rock_paper()">게임시작</button>
+	<button onclick="scissors()">가위</button>
+	<button onclick="rock()">바위</button>
+	<button onclick="paper()">보</button>
+	<p id="demo"></p>
+	<p id="demo2"></p>
+	<p id="trialCount"></p>
+
+	<script>
+		var rnum;
+		var trial = 0;
+		var win = 0;
+		var lose = 0;
+		var draw = 0;
+
+		function rock_paper(){
+			rnum = Math.floor(Math.random()*3)+1;
+
+			switch(rnum){
+				case 1:
+				result = "가위";
+				rnum = 1;
+				break;
+
+				case 2:
+				result = "바위";
+				rnum = 2;
+				break;
+
+				case 3:
+				result ="보";
+				rnum = 3;
+				break;
+			}
+			document.getElementById("demo").innerHTML = result;
+		}
+		function scissors(){
+			trial++;
+
+			switch(rnum){
+				case 1:
+				result2= "비겼습니다.";
+				draw++;
+				break;
+
+				case 2:
+				result2= "졌습니다.";
+				lose++;
+				break;
+
+				case 3:
+				result2 = "이겼습니다.";
+				win++;
+				break;
+			}
+			document.getElementById("demo2").innerHTML = result2;
+			document.getElementById("trialCount").innerHTML ="승"+ win + "패" + lose + "무" + draw + "총" + trial + "회";
+		}
+		function rock(){
+			trial++;
+
+			switch(rnum){
+				case 1:
+				result2= "이겼습니다.";
+				win++;
+				break;
+
+				case 2:
+				result2= "비겼습니다.";
+				draw++;
+				break;
+
+				case 3:
+				result2 = "졌습니다.";
+				lose++;
+				break;
+			}
+			document.getElementById("demo2").innerHTML = result2;
+			document.getElementById("trialCount").innerHTML ="승"+ win + "패" + lose + "무" + draw + "총" + trial + "회";
+		}
+		function paper(){
+			trial++;
+
+			switch(rnum){
+				case 1:
+				result2= "졌습니다.";
+				lose++;
+				break;
+
+				case 2:
+				result2= "이겼습니다.";
+				draw++;
+				break;
+
+				case 3:
+				result2 = "비겼습니다.";
+				lose++;
+				break;
+			}
+			document.getElementById("demo2").innerHTML = result2;
+			document.getElementById("trialCount").innerHTML ="승"+ win + "패" + lose + "무" + draw + "총" + trial + "회";
+		}
+	</script>
+</body>
+</html>

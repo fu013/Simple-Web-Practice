@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+   <input type="number" id="myNum">
+   <button onclick="box()">눌러봐</button>
+   <p id="res"></p>
+
+   <script>
+      function box(){
+         var num1 = document.getElementById("myNum").value;
+         var number = parseInt(num1);
+         var x= 60;
+
+         if(number == 0){
+            document.getElementById("res").innerHTML = "프로그램 종료";
+         }
+         else{
+            if(number<60){
+            document.getElementById("res").innerHTML = "0시간0분" + number + "초";
+            }
+            else if(number>=3600){
+               y=3600;
+               second=0;
+               for(var z=1; y<=number ; z++){
+                  min = number-3600*z;
+                  y = 3600 * (z+1);
+               }
+               if(min<60){
+                  second = min;
+
+                  min= 0;
+               }
+               else{
+                  o=60;
+                  for(var i=1; min>=o; i++){
+                  a = min - 60  * i;
+                  o = 60 *(i+1);
+                  }
+                  second= a;
+                  min = i-1;
+               } 
+               document.getElementById("res").innerHTML = z-1 + "시간" + min + "분" + second +"초";
+            }
+            else{
+               for(var i=1; number>=x; i++){
+                  minute = number - 60  * i;
+                  x = 60 *(i+1);
+               }
+               document.getElementById("res").innerHTML = "0시간" + parseInt(i-1) + "분" + minute + "초";
+            }
+         }
+      }
+   </script>
+</body>
+</html>

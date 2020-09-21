@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="rock_paper()">게임시작</button>
+	<br><br>
+	<button onclick="scissors()">가위</button>
+	<button onclick="rock()">바위</button>
+	<button onclick="paper()">보</button>
+	<br><br>
+	<button onclick="rock_paper()">재시작</button>
+	<p id="demo"></p>
+	<p id="demo2"></p>
+	<p id="trialCount"></p>
+
+	<script>
+		var rnum;
+		var trial = 0;
+		var win = 0;
+		var lose = 0;
+		var draw = 0;
+
+		function rock_paper(){
+			rnum = Math.floor(Math.random()*3)+1;
+
+			if(rnum == "1"){
+				document.getElementById("demo").innerHTML = "가위";
+			}
+			else if(rnum == "2"){
+				document.getElementById("demo").innerHTML = "바위";
+			}
+			else{
+				document.getElementById("demo").innerHTML = "보";
+			}
+			// return rnum;
+		}
+		function scissors(){
+			trial++;
+			if(rnum == "1"){
+				document.getElementById("demo2").innerHTML = "비겼습니다.";
+				draw++;
+			}
+			else if(rnum == "2"){
+				document.getElementById("demo2").innerHTML = "졌습니다.";
+				lose++;
+			}
+			else{
+				document.getElementById("demo2").innerHTML = "이겼습니다.";	
+				win++;
+			}
+			document.getElementById("trialCount").innerHTML ="승"+ win + "패" + lose + "무" + draw + "총" + trial + "회";
+		}
+		function rock(){
+			trial++;
+			if(rnum == "1"){
+				document.getElementById("demo2").innerHTML = "이겼습니다.";
+				win++;
+			}
+			else if(rnum == "2"){
+				document.getElementById("demo2").innerHTML = "비겼습니다.";
+				draw++;
+			}
+			else{
+				document.getElementById("demo2").innerHTML = "졌습니다.";	
+				lose++;
+			}
+			document.getElementById("trialCount").innerHTML = "승"+ win + "패" + lose + "무" + draw + "총" + trial + "회";
+		}
+		function paper(){
+			trial++;
+			if(rnum == "1"){
+				document.getElementById("demo2").innerHTML = "졌습니다.";
+				lose++;
+			}
+			else if(rnum == "2"){
+				document.getElementById("demo2").innerHTML = "이겼습니다.";
+				win++;
+			}
+			else{
+				document.getElementById("demo2").innerHTML = "비겼습니다.";	
+				draw++;
+			}
+			document.getElementById("trialCount").innerHTML = "승"+ win + "패" + lose + "무" + draw + "총" + trial + "회";
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?php 
+$inch = (int)$_POST['inch'];
+?>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title></title>
+</head>
+<body>
+   <h1>HI!</h1>
+   <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
+      <input type="number" name="inch">
+      <input type="submit" value="SUBMIT">
+   </form>
+   <table border="1">
+   	<tr>
+   		<td>인치</td>
+   		<td>센치미터</td>
+   	</tr>
+   	<?php 
+   	$inch = 10;
+   	while($inch <= 100) {
+	$cm = $inch * 2.54;
+	?>
+   		<tr align='center'>
+   			<td><?= $inch ?></td>
+   			<td><?= $cm ?></td>
+   		</tr>
+   	
+<?php
+	$inch = $inch + 10;
+}
+   	?>
+
+   </table>
+</body>
+</html>

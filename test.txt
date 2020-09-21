@@ -1,0 +1,167 @@
+<?php 
+	$std_cnt = (int)$_POST['std_cnt2'];
+ ?>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Score System</title>
+</head>
+<body>
+	<?php if ($std_cnt ==0) { ?>
+		
+   Input count of student : 
+   <input type="number" name="std_cnt">
+   <button type="button">SUBMIT</button>
+
+   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" name="std_form">
+      
+   </form>
+<?php } elseif ($std_cnt > 0) { ?>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>NAME</th>
+				<th>html</th>
+				<th>css</th>
+				<th>js</th>
+				<th>php</th>
+				<th>sql</th>
+				<th>total</th>
+				<th>avg</th>
+				<th>rank</th>
+			</tr>
+		</thead>
+		<?php 
+		for ($rows=0; $rows < $std_cnt; $rows++) { 
+			$std_infos[$rows][0]=$_POST['std'.$rows.'_name'];
+			for ($cols=1; $cols < 6  ; $cols++) { 
+				$std_infos[$rows][$cols] = (int)$_POST['std'.$rows.'_score'.$cols];
+				$std_infos[$rows][6] += $std_infos[$rows][$cols];
+			}
+			$std_infos[$rows][7] =(float)($std_infos[$rows][6]/5);
+		}
+		for ($k=0; $k < $std_cnt; $k++) { 
+				$rank = 1;
+				for ($h=0; $h < $std_cnt; $h++) { 
+					if ($std_infos[$k][6] < $std_infos[$h][6]) {
+						$rank++;
+					}
+				}
+				$std_infos[$k][8]=$rank;
+			}
+	?>
+		<tbody>
+			<?php for ($i=0; $i < $std_cnt; $i++) { ?>
+			<tr>
+				<?php for ($j=0; $j < count($std_infos[$i]); $j++) { ?>
+					<td><?=$std_infos[$i][$j] ?></td>
+				<?php } ?>
+			</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+<?php } ?>
+   <script
+   src="https://code.jquery.com/jquery-3.4.1.min.js"
+   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+   crossorigin="anonymous"></script>
+   <script>
+      $(function(){
+         $("button").on("click", function(){
+            var std_cnt = parseInt($("input[name='std_cnt']").val());
+            var setTable = '<table border="1"><thead><tr><th>Name</th><th>HTML</th><th>CSS</th><th>JAVASCRIPT</th><th>PHP</th><th>SQL</th></tr></thead><tbody></tbody></table>';
+
+            var std_form = $("form[name='std_form']");
+            std_form.append('<input type="hidden" name="std_cnt2" value="'+std_cnt+'">');
+            std_form.append(setTable);
+
+            for(var i = 0; i< std_cnt; i++){
+               $("tbody").append('<tr>');
+               $("tbody").append('<td><input type="text" name="std'+i+'_name"></td>');
+               for(var j=1; j< 6; j++){
+                  $("tbody").append('<td><input type="number" name="std'+i+'_score'+j+'"></td>');
+               }
+               $("tbody").append('</tr>');
+            }
+            std_form.append('<input type="submit" value="SUBMIT">');
+         });
+      });
+   </script>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+<?php 
+$std_cnt = (int)$_POST['std_cnt']
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<?php if ($std_cnt > 0) { ?>
+		<table border="1">
+			<thead>
+				<tr>
+					<td>name</td>
+					<td>html</td>
+					<td>css</td>
+					<td>js</td>
+					<td>php</td>
+					<td>sql</td>
+					<td>total</td>
+					<td>avg</td>
+					<td>rank</td>
+				</tr>
+			</thead>
+			<?php 
+			for ($rows=0; $rows < $std_cnt; $rows++) { 
+				$std_infos[$rows][0]=$_POST['std'.$rows.'_name'];
+				$std_infos[$rows][1]=$_POST['std'.$rows.'_html'];
+				$std_infos[$rows][2]=$_POST['std'.$rows.'_css'];
+				$std_infos[$rows][3]=$_POST['std'.$rows.'_js'];
+				$std_infos[$rows][4]=$_POST['std'.$rows.'_php'];
+				$std_infos[$rows][5]=$_POST['std'.$rows.'_sql'];
+
+				// $std_infos[$rows][6]=(int)$std_infos[$rows][1]+
+				// (int)$std_infos[$rows][2]+
+				// (int)$std_infos[$rows][3]+
+				// (int)$std_infos[$rows][4]+
+				// (int)$std_infos[$rows][5];
+
+				for ($cols=1; $cols < 6 ; $cols++) { 
+					$std_infos[$rows][6] += (int)$std_infos[$rows][$cols];
+				}
+				$std_infos[$rows][7]=(float)($std_infos[$rows][6]/5);
+			}
+			for ($k=0; $k < $std_cnt; $k++) { 
+				$rank = 1;
+				for ($h=0; $h < $std_cnt; $h++) { 
+					if ($std_infos[$k][6] < $std_infos[$h][6]) {
+						$rank++;
+					}
+				}
+				$std_infos[$k][8]=$rank;
+			}
+			?>
+			<tbody>
+				<?php for ($i=0; $i < $std_cnt; $i++) { ?>
+					<tr>
+						<?php for ($j=0; $j < 9; $j++) { ?> 
+							<td><?= $std_infos[$i][$j] ?></td>
+						<?php } ?>
+					</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+	<?php } ?>
+	<h1><a href="index.php">go insert page</a></h1>
+</body>
+</html>
+

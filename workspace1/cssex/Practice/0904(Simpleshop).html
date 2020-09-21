@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<title></title>
+	<style>
+
+		body{
+			margin:0;
+		}
+		#box1{
+			position: relative;
+			/*position: fixed;*/
+			background-color: yellow;
+			width: 100%;
+			height: 100px;
+		}
+		#box1 h1{
+			position: absolute;
+			margin:0;
+			font-size: 20px;
+			margin-left: 30px;
+			top:50%;
+			transform: translateY(-50%);
+		}
+		#box1 p{
+			position: absolute;
+			right: 0;
+			margin:0;
+			word-spacing: 30px;
+			top:50%;
+			transform: translateY(-50%); 
+			margin-right: 30px;
+			font-weight: bold;
+			font-size:13px;
+		}
+		#box1 a{
+			text-decoration: none;
+		}
+		#box2{
+			text-align: center;
+			background-color: #8A0868;
+			width: 100%;
+			height: 500px;
+		}
+		#box2 img{
+			width: 50%;
+			height: 500px;
+		}
+		#box3{
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+		#box3 p{
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.grid-container {
+		  display: grid;
+		  grid-template-columns: auto auto auto;
+		  grid-column-gap: 20px;
+		  /*grid-template-rows: 225px 100px;*/
+		  justify-content: center;
+		}
+		.grid-item {
+		  /*border: 1px solid black;*/
+		  width: 225px;
+		  height: 225px;
+		  margin-bottom: 20px;
+		}
+		.grid-item img{
+			width: 225px;
+			height: 225px;
+		}
+		.grid-container div{
+			/*background-color: yellow;*/
+			text-align: center;
+			font-size: 16px;
+		}
+		.grid-container a{
+			text-decoration: none;
+		}
+		.grid-container p{
+			font-size: 16px;
+			margin:0;
+			text-align: center;
+		}
+		.grid-container p:last-child{
+			margin-top: 4px;
+		}
+		.grid-container a:hover{
+			border:1px solid black;
+		}
+		#box4{
+			/*background-color: yellow;*/
+			width: 100%;
+			height: 80px;
+		}
+		#box5{
+			width: 100%;
+			height: 120px;
+		}
+		#box6{
+			width: 100%;
+			text-align: center;
+			word-spacing: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<h1>SIMPLESHOP</h1>
+		<p><a href="">Contact </a><a href="">Shop </a><a href="">Cart </a><a href="">Login </a></p>
+	</div>
+	<div id="box2">
+		<img src="../../Images/will.jpg">
+	</div>
+	<div id="box3">
+		<p>Our New Products</p>
+	</div>
+	<div class="grid-container">
+		<a href="#">
+			<div class="grid-item"><img src="../../Images/Aruru.jpg"></div>
+			<p>Aruru</p>
+			<p>49,000</p>
+		</a>
+		<a href="#">
+ 	 		<div class="grid-item"><img src="../../Images/Bow.jpg"></div>
+ 	 		<p>Bow</p>
+			<p>49,000</p>
+ 	 	</a>
+ 	 	<a href="#">
+ 	 		<div class="grid-item"><img src="../../Images/Deliki.jpg"></div>
+ 	 		<p>Deliki</p>
+			<p>49,000</p>
+ 	 	</a>
+	</div>
+	<div id="box4"></div>
+	<div class="grid-container">
+		<a href="#">
+			<div class="grid-item"><img src="../../Images/Aruru.jpg"></div>
+			<p>Aruru</p>
+			<p>49,000</p>
+		</a>
+		<a href="#">
+ 	 		<div class="grid-item"><img src="../../Images/Bow.jpg"></div>
+ 	 		<p>Bow</p>
+			<p>49,000</p>
+ 	 	</a>
+ 	 	<a href="#">
+ 	 		<div class="grid-item"><img src="../../Images/Deliki.jpg"></div>
+ 	 		<p>Deliki</p>
+			<p>49,000</p>
+ 	 	</a>
+	</div>
+	<div id="box4"></div>
+	<div class="grid-container">
+		<a href="#">
+			<div class="grid-item"><img src="../../Images/Aruru.jpg"></div>
+			<p>Aruru</p>
+			<p>49,000</p>
+		</a>
+		<a href="#">
+ 	 		<div class="grid-item"><img src="../../Images/Bow.jpg"></div>
+ 	 		<p>Bow</p>
+			<p>49,000</p>
+ 	 	</a>
+ 	 	<a href="#">
+ 	 		<div class="grid-item"><img src="../../Images/Deliki.jpg"></div>
+ 	 		<p>Deliki</p>
+			<p>49,000</p>
+ 	 	</a>
+	</div>
+	<div id="box5"></div>
+	<div id="box6">
+		<i class="fas fa-cloud"></i>
+		<i class="fas fa-heart"></i>
+		<i class="fas fa-car"></i>
+	</div>
+	<div id="box4"></div>
+</body>
+</html>

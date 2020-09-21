@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick= "myFunction('남', 25, '여', 24)">눌러봐</button>
+	<p id="demo"></p>
+
+	<script>
+		// function start(){
+		// 	document.getElementById("demo").innerHTML = name;
+		// }
+
+		function myFunction(myGen, myAge, yourGen, yourAge){
+			var name="";
+			if(myGen == "남"){
+				if(yourGen == "남"){
+					if(myAge > yourAge){
+						name = "남동생";
+					}
+					else if(myAge == yourAge){
+						name = "친구";
+					}
+					else {
+						name = "형";
+					}
+				}
+				else if(yourGen == "여"){
+					if(myAge > yourAge){
+						name = "여동생";
+					}
+					else if(myAge == yourAge){
+						name = "친구"
+					}
+					else{
+						name = "누나";
+					}
+				}
+			}
+			else{
+				if(yourGen == "남"){
+					if(myAge > yourAge){
+						name = "남동생";
+					}
+					else if(myAge == yourAge){
+						name = "친구";
+					}
+					else {
+						name = "오빠";
+					}
+				}
+				else if(yourGen == "여"){
+					if(myAge > yourAge){
+						name = "여동생";
+					}
+					else if(myAge == yourAge){
+						name = "친구"
+					}
+					else{
+						name = "언니";
+					}
+				}
+			}
+			// return name;
+			document.getElementById("demo").innerHTML = name;
+		}
+		// document.write(myFunction("남",25,"남",25));
+		
+	</script>
+
+</body>
+</html>

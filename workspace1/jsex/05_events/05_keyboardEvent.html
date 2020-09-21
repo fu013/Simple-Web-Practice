@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>05_keyboardEvent.html</title>
+</head>
+<body>
+	<h1>keydown, keyup</h1>
+	<input type="text" id="target">
+	<script>
+		var input = document.getElementById("target");
+
+		target.addEventListener("keydown", function(){
+			target.style.backgroundColor = "lightgreen";
+		});
+		target.addEventListener("keyup", function(){
+			target.style.backgroundColor = "lightgray";
+		});
+	</script>
+</body>
+</html>

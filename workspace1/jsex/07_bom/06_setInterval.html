@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>06_setInterval.html</title>
+	<script>
+		var id;
+		function changeColor(){
+			id = setInterval(flashText, 500);
+		}
+		function flashText(){
+			var elem = document.getElementById("target");
+			elem.style.color= (elem.style.color == "white") ?"blue" : "white";
+			elem.style.backgroundColor = (elem.style.backgroundColor) == "red" ? "yellow" : "red";
+		}
+		function stopTextColor(){
+			clearInterval(id);
+		}
+	</script>
+</head>
+<body onload="changeColor()">
+	<div id="target">
+		<P>TEXTAREA HERE</P>
+	</div>
+	<button onclick="changeColor()">start Button</button>
+	<button onclick="stopTextColor()">Stop Button</button>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>03_confirmEx.html</title>
+</head>
+<body>
+	<button onclick="myFunc()">Confirm</button>
+	<h1 id="result"></h1>
+	<script>
+		function myFunc (){
+			var txt;
+			var r = confirm("Press a button");
+			if (r == true){
+				txt = "확인을 누르셨군요";
+			}else{
+				txt = "취소를 누르셨군요";
+			}
+			document.getElementById("result").innerHTML = txt;
+		}
+
+	</script>
+</body>
+</html>

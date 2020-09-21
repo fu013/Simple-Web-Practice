@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="box()">로또</button>
+	<p id="res"></p>
+
+	<script>
+		var arr = [];
+		function box(){
+			
+			for(var i =0; i<6; i++){
+				arr[i] = Math.floor(Math.random()*45)+1;
+
+				for(var j=0; j<i; j++){
+					if(arr[i]== arr[j]){
+						i--;
+						break;
+					}
+				}
+			}
+			arr.sort(function(a, b){return a - b});
+			document.getElementById("res").innerHTML = arr;
+		}
+	</script>
+</body>
+</html>

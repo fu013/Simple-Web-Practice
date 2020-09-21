@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+   <button onclick="box1()">시작</button>
+   <p id="res"></p>
+   <p id="an"></p>
+   <input type="number" id="myNum">
+   <button onclick="box2()">정답입력후 클릭</button>
+   <p id="arr2"></p>
+   <button onclick="box3()">정답확인</button>
+   <p id="res2"></p>
+   <p id="end"></p>
+   <script>
+      arr = [];
+      arr2 = [];
+      arr3 = [];
+      var answer = "";
+      var trial = 0;
+      var x = 0;
+      var o = 0;
+
+      document.write(text);
+
+      function box1(){
+         var start = new Date();
+         arr3[0] = start.getSeconds();
+         for(var i=0; i<10; i++){
+            rnum = Math.floor(Math.random()*8)+2;
+            rnum2 = Math.floor(Math.random()*9)+1;
+            answer = rnum * rnum2;
+            arr[i] = answer;
+
+            document.getElementById("res").innerHTML += i + ".  " + rnum + "*" + rnum2 + "=<br>";
+         }
+         document.getElementById("an").innerHTML = "답: " + arr;
+      }
+      function box2(){
+         arr2[trial] = document.getElementById("myNum").value;
+         trial++;
+      }
+
+      function box3(){
+         var end = new Date();
+         var sec = end.getSeconds();
+         if(sec>arr3[0]){
+            document.getElementById("end").innerHTML = sec - arr3[0] + "초";
+         }
+         else{
+            var y = 60 - arr3[0];
+            var answer = y + sec;
+            document.getElementById("end").innerHTML = answer + "초";
+         }
+
+         for(var i=0; i<10; i++){
+            if(arr[i]== arr2[i]){
+               o++;
+            }
+            else{
+               x++;
+            }
+         }
+         // document.getElementById("res2").innerHTML = trial;
+
+         document.getElementById("res2").innerHTML = "맞은개수: " + o + "틀린개수" + x;
+      }
+   </script>
+</body>
+</html>

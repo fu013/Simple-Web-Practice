@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>07_historyObj.html</title>
+</head>
+<body>
+	<h2>History object</h2>
+	<p id="result"></p>
+	<button onclick="goBack()">Back</button>
+	<button onclick="goForward()">Forward</button>
+	<button onclick="goBackN()">Back 2 page</button>
+	<script>
+		var x = history.length;
+		document.getElementById("result").innerHTML = "History list : " + x;
+		function goBack(){
+			window.history.back();
+		}
+		function goForward(){
+			window.history.forward();
+		}
+		function goBackN(){
+			window.history.go(-2);
+			// 양수 음수 
+		}
+	</script>
+</body>
+</html>

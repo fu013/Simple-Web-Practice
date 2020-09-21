@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum">
+	<button onclick="box()">입력한 수까지의 홀수값과 짝수값의 합</button>
+	<p id="res1"></p>
+	<p id="res2"></p>
+
+	<script>
+		function box(){
+			var num = document.getElementById("myNum").value;
+
+			var i = 1;
+			var z = 2;
+			var result1 = 0;
+			var result2 = 0;
+
+			while(i<=num){
+				result1 += i;
+				i += 2;
+			}
+			while(z<=num){
+				result2 += z;
+				z += 2;
+			}
+			// var x = Number(num) + Number(1);
+
+			// result1 = (num * x) * 0.5 ;
+			// result2 = ;
+
+			document.getElementById("res1").innerHTML = "홀수값: " +  result1;
+			document.getElementById("res2").innerHTML = "짝수값: " + result2;
+		}
+	</script>
+</body>
+</html>

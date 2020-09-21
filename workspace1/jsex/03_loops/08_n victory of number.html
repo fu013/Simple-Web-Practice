@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum1" placeholder="x값">
+	<input type="number" id="myNum2" placeholder="y값">
+	<button onclick="box()">x의 y승 값</button>
+	<p id="res"></p>
+	<script>
+		function box(){
+			var num1 = document.getElementById("myNum1").value;
+			var num2 = document.getElementById("myNum2").value;
+
+			if(num2 == 0){
+				result = (num1 * 0) +1;
+			}
+			var i= 1;
+			var result = 1;
+			while(i <= num2){
+				result *= num1;
+				i++;
+			}
+
+			document.getElementById("res").innerHTML = result;
+		}
+	</script>
+</body>
+</html>

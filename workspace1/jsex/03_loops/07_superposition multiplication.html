@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	</style>
+</head>
+<body>
+	<p id="res1"></p>
+
+	<script>
+		var text= "";
+		for(var i=1; i<=9; i++){
+			for(var y=1; y<=9; y++){
+				var c= i *y;
+				text += i + "*" + y + "=" + c + " " + "<br>";
+				document.getElementById("res1").innerHTML = text;
+			}
+			text += "<br>";
+			document.getElementById("res1").innerHTML = text;
+		}
+	</script>
+</body>
+</html>

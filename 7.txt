@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+   <title>종합 계산</title>
+   <style>
+      table, td, th{
+         border:1px solid black;
+         text-align: center;
+      }
+   </style>
+</head>
+<body>
+   <table>
+      <tr>
+         <th colspan="4">길이</th>
+      </tr>
+      <tr>
+         <td>인치</td>
+         <td>피트</td>
+         <td>야드</td>
+         <td>마일</td>
+      </tr>
+      <?php
+      $i = 1;
+      $standard = 60;
+
+      while ($i <= 10) {
+      $inch = $standard;
+      $feet = $standard * 0.083333;
+      $yard = $standard * 0.027778;
+      $mile = $standard * 0.000016;
+      ?>
+      <tr>
+         <td><?=$inch ?></td>
+         <td><?=$feet ?></td>
+         <td><?=$yard ?></td>
+         <td><?=$mile ?></td>
+      </tr>
+
+      <?php
+      $i++;
+      $standard +=10;
+   }
+   ?>
+</table>
+<br>
+<table>
+      <tr>
+         <th colspan="2">넓이</th>
+      </tr>
+      <tr>
+         <td>제곱미터</td>
+         <td>제곱야드</td>
+      </tr>
+      <?php
+      $i = 1;
+      $standard = 1;
+
+      while ($i <= 10) {
+      $inch = $standard;
+      $yd = $standard * 1.19599;
+      ?>
+      <tr>
+         <td><?=$inch ?></td>
+         <td><?=$yd ?></td>
+      </tr>
+
+      <?php
+      $i++;
+      $standard++;
+   }
+   ?>
+</table>
+<br>
+<table>
+      <tr>
+         <th colspan="2">무게</th>
+      </tr>
+      <tr>
+         <td>온스</td>
+         <td>파운드</td>
+      </tr>
+      <?php
+      $i = 1;
+      $standard = 1;
+
+      while ($i <= 10) {
+      $inch = $standard;
+      $lb = $standard * 0.0625;
+      ?>
+      <tr>
+         <td><?=$inch ?></td>
+         <td><?=$lb ?></td>
+      </tr>
+
+      <?php
+      $i++;
+      $standard++;
+   }
+   ?>
+</table>
+<br>
+<table>
+      <tr>
+         <th colspan="2">속도</th>
+      </tr>
+      <tr>
+         <td>킬로미터</td>
+         <td>마일</td>
+      </tr>
+      <?php
+      $i = 1;
+      $standard = 1;
+
+      while ($i <= 10) {
+      $inch = $standard;
+      $mile = $standard * 0.621371;
+      ?>
+      <tr>
+         <td><?=$inch ?></td>
+         <td><?=$mile ?></td>
+      </tr>
+
+      <?php
+      $i++;
+      $standard++;
+   }
+   ?>
+</table>
+
+</body>
+</html>

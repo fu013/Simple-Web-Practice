@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>02_idSelector.html</title>
+	<style>
+		div {background-color: grey; height: 100px;}
+		.a {width: 100%;background-color: red;}
+		#b {width: 50%;background-color: green;}
+	 	#b div {width: 25%; background-color: blue;}
+	 	#b div #c {width: 10%; background-color: yellow;}
+	 /*.a #b div {width: 25%; background-color: blue;}*/
+	 	}
+
+	</style>
+</head>
+<body>
+	<div class="a">
+		100%
+		<!-- <div id="b" class="c"> -->
+		<div id="b">50%
+			<!-- id를 만드는 이유는 분명해야 함, 클래스 3개이상이면 id 만드는게 좋음, 클래스는 개별 적용용  아이디는 공통 적용용 -->
+			<div>25%
+			<div id="c">
+			</div>
+			</div> 
+		</div>
+	</div>
+</html>

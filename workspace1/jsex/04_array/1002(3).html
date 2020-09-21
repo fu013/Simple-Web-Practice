@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="string" id="myString">
+	<button onclick="box()">확인</button>
+	<p id="res"></p>
+	<script>
+		var arr = [];
+		var answer = ["입춘", "우수", "경칩", "춘분", "청명", "곡우", "입하", "소만", "망종", "하지", "소서", "대서", "입추", "처서", "백로", "추분", "한로", "상강", "입동", "소설", "대설", "동지", "소한", "대한"];
+
+		arr.push("입춘");
+		arr.push("우수");
+		arr.push("경칩");
+		arr.push("춘분");
+		arr.push("청명");
+		arr.push("곡우");
+		arr.push("입하");
+		arr.push("소만");
+		arr.push("망종");
+		arr.push("하지");
+		arr.push("소서");
+		arr.push("대서");
+		arr.push("입추");
+		arr.push("처서");
+		arr.push("백로");
+		arr.push("추분");
+		arr.push("한로");
+		arr.push("상강");
+		arr.push("입동");
+		arr.push("소설");
+		arr.push("대설");
+		arr.push("동지");
+		arr.push("소한");
+		arr.push("대한");
+
+		arr.sort(function(a,b){return 0.5 - Math.random()});
+
+		document.write(arr);
+
+		function box(){
+			var str = document.getElementById("myString").value;
+			document.getElementById("res").innerHTML = str;
+
+			if(str == answer){
+				document.getElementById("res").innerHTML = "정답입니다.";
+			}
+			else{
+				document.getElementById("res").innerHTML = "오답입니다.";
+			}
+		}
+	</script>
+</body>
+</html>

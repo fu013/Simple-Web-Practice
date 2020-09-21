@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>01_test.html</title>
+  <style>
+    div{
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
+    #myDIV1{
+      background-color: yellow;
+      border:1px solid black;
+      z-index: 1;
+    }
+    #myDIV2{
+      top: 50px;
+      left: 50px;
+      background-color: blue;
+      border:1px solid black;
+      z-index: 0;
+    }
+    #myDIV3{
+      top: 100px;
+      left: 100px;
+      background-color: pink;
+      border:1px solid black;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="myDIV1"></div>
+  <div id="myDIV2"></div>
+  <div id="myDIV3"></div>
+</body>
+</html>

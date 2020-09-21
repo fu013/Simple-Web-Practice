@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum">
+	<button onclick="box()">눌러봐</button>
+	<p id="res1"></p>
+	<p id="res2"></p>
+	<!-- <p id="res3"></p> -->
+	<p id="res4"></p>
+	<p id="res5"></p>
+	<p id="res6"></p>
+
+	<script>
+		var score = 0;
+		var myNums1 = new Array();
+		var myNums2 = [];
+		var j = 0;
+		// var z = 0;
+
+		function box(){
+			var num = document.getElementById("myNum").value;
+			rnum = Math.floor(Math.random()*9)+1; //0 ~ 1 사이에 소수점을 줌
+			myNums1[j] = rnum;
+			myNums2[j] = num;
+			j++;
+			if(j<=10){
+				if(j>9){
+					var text ="";
+					var text2 ="";
+					document.getElementById("res4").innerHTML = "게임종료";
+					for(var i=0; i<myNums1.length; i++){
+						text += myNums1[i] + " ";
+					}
+					for(var z=0; z<myNums2.length; z++){
+						text2 += myNums2[z] + " ";
+					}
+					document.getElementById("res5").innerHTML = "컴퓨터 정답: " + text;
+					document.getElementById("res6").innerHTML = "내가 입력한 답: " + text2;
+				}
+				else{
+					document.getElementById("res2").innerHTML = "정답: " + rnum;
+				}
+				document.getElementById("res1").innerHTML = "총 횟수" + j;
+			}
+		}
+
+	</script>
+</body>
+</html>

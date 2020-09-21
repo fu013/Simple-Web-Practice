@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		var total;
+		var average;
+		var arr = [];
+		var rank;
+		
+		for(var i=0; i<5; i++){
+			document.write(i+ "번 학생" + "<br>");
+			html1 = Math.floor((Math.random()*(100-50+1))+ 50);
+			document.write(html1 + " ");
+
+			css1 = Math.floor((Math.random()*(100-50+1))+ 50);
+			document.write(css1 + " ");
+
+			js1 = Math.floor((Math.random()*(100-50+1))+ 50);
+			document.write(js1 + " ");
+
+			db1 = Math.floor((Math.random()*(100-50+1))+ 50);
+			document.write(db1 + " ");
+
+			php1 = Math.floor((Math.random()*(100-50+1))+ 50);
+			document.write(php1 + "</br>");
+
+			total = html1 + css1 + js1 + db1 + php1;
+			average = total / 5;
+			// arr[i] = "<br>" + i + "번학생" + average + "<br>";
+			arr[i] = average;
+
+			document.write("총점: " + total + "</br>");
+			document.write("평균: " + average + "</br>");
+			document.write("</br>");
+		}
+		
+		arr.sort(function(a, b){return b - a});
+		document.write("순위: " + arr);
+
+	</script>
+</body>
+</html>

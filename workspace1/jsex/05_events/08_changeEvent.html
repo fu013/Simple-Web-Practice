@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>08_changeEvent.html</title>
+</head>
+<body>
+	<h1>onchange Event</h1>
+	<input type="text" id="target" placeholder="Uppercase Please">
+	<script>
+		var target = document.getElementById("target");
+		target.addEventListener("change", function (){
+			target.value = target.value.toLowerCase();
+		});
+	</script>
+</body>
+</html>

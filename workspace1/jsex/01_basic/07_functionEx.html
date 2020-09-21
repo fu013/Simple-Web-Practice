@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+	<!-- <h1 id="bmi"></h1> -->
+	<script>
+		function toInch(centi){
+			var x = centi / 2.54;
+			return x;
+		}
+		function bmi(kg, height){
+			var bmi;
+			bmi = kg / ((height * 1e-2) ** 2);
+			return bmi.toFixed(2);
+
+			// return (kg / (height ** 2));
+			//return (kg / (height * 1e-2));
+		}
+		document.write("INCH값 : " + toInch(173));
+		document.write("<br>");
+		document.write("BMI값 : ");
+		// document.getElementById("bmi").innerHTML = bmi(55, 173);
+		document.write(bmi(55, 173));
+	</script>
+</body>
+</html>

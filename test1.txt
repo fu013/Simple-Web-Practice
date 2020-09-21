@@ -1,0 +1,47 @@
+<?php 
+   $std_cnt = (int)$_POST['std_cnt'];
+ ?>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Input Scores</title>
+</head>
+<body>
+   <form method="post" name="std_form" action="<?php $_SERVER['PHP_SELF'] ?>">
+      Input Count of Student : 
+      <input type="number" name="std_cnt">
+      <input type="submit" value="SUBMIT">
+   </form>
+   <?php if ($std_cnt > 0) { ?>
+      <form name="score_form" method="post" action="index2.php">
+         <input type="hidden" name="std_cnt" value="<?=$std_cnt?>">
+      <table border="1">
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>HTML</th>
+               <th>CSS</th>
+               <th>JS</th>
+               <th>PHP</th>
+               <th>SQL</th>
+            </tr>
+         </thead>
+         <tbody>
+            <?php for($i=0; $i < $std_cnt; $i++){ ?>
+            <tr>
+               <td><input type="text" name="std<?=$i?>_name"></td>
+               <td><input type="number" name="std<?=$i?>_html"></td>
+               <td><input type="number" name="std<?=$i?>_css"></td>
+               <td><input type="number" name="std<?=$i?>_js"></td>
+               <td><input type="number" name="std<?=$i?>_php"></td>
+               <td><input type="number" name="std<?=$i?>_sql"></td>
+            </tr>
+         <?php } ?>
+         </tbody>
+      </table>
+      <input type="submit" value="SUBMIT">
+      </form>
+   <?php   }    ?>
+</body>
+</html>

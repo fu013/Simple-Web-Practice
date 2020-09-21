@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>01_windowOpen.html</title>
+	<script>
+		var myWindow;
+		function openWin(){
+			myWindow = window.open("../06_object/01_date.html", "myWin", "width=400, height=400");
+			//url (1번째)
+			//창의 이름(2번째)
+		}
+		function closeWin(){
+			if(myWindow){
+				myWindow.close();
+			}
+		}
+	</script>
+</head>
+<body>
+	<button onclick="openWin()">myWindow open</button>
+	<button onclick="closeWin()">myWindow close</button>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10_selectEvent.html</title>
+</head>
+<body>
+	<h1>Select Event</h1>
+	<input type="text" id="myText" placeholder="Input Some Text" onselect = "myFunction()">
+	<script>
+		function myFunction(){
+			document.getElementById("myText").style.background = "line";
+			alert("This input tag was selected!");
+		}
+		//전체선택하면 뜸
+	</script>
+</body>
+</html>

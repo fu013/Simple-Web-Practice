@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body>
+	<button onclick="computer_make_num()">컴퓨터 랜덤 숫자 만들기!</button>
+
+	<input type="number" id="myNum">
+	<button onclick="random_number()">숫자 맞추기!</button>
+	<h1 id="comNum"></h1>
+	<h1 id="result"></h1>
+	<h1 id="trialCount"></h1>
+
+	<script>
+		var rnum;
+		var trial= 0;
+
+		// var rnum = Math.floor(Math.random()*10)+1; //0 ~ 1 사이에 소수점을 줌
+
+		function computer_make_num(){
+			rnum = Math.floor(Math.random()*10)+1; //0 ~ 1 사이에 소수점을 줌
+		}
+
+		function random_number(){
+			// document.write("<h1>" + rnum + "</h1>");
+			// var answer="";
+			var myGuess = document.getElementById("myNum").value;
+			trial++;
+
+			if(myGuess>10 || myGuess <0){
+				answer = "다시 입력하세요!!";
+			}
+			else if(myGuess > rnum){
+				answer = "작습니다.";
+			}
+			else if(myGuess == rnum){
+				answer = "정답입니다!!";
+			}
+			else if(myGuess < rnum){
+				answer = "큽니다.";
+			}
+			document.getElementById("comNum").innerHTML = rnum;
+			document.getElementById("result").innerHTML = answer;
+			document.getElementById("trialCount").innerHTML = trial;
+		}
+	</script>
+</body>
+</html>

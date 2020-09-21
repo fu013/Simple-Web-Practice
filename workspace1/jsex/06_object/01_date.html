@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button type="button" id="startBtn">Start Game</button>
+	<hr>
+	<h1>Quiz1 : <span id="q1num1"></span>x<span id="q1num2"></span>=<input type="number" id = "q1"></h1>
+	<h1>Quiz2 : <span id="q2num1"></span>x<span id="q2num2"></span>=<input type="number" id = "q2"></h1>
+	<h1>Quiz3 : <span id="q3num1"></span>x<span id="q3num2"></span>=<input type="number" id = "q3"></h1>
+
+	<button type="button" id="finishBtn">Finish Game</button>
+	<hr>
+	<h1 id="result">sec</h1>
+
+	<script>
+		var q1num1, q1num2, q2num1,q2num2,q3num1,q3num2, beginning, ending;
+
+		function make_quiz(){
+			q1num1 = Math.floor(Math.random()*8)+2;
+			q1num2 = Math.floor(Math.random()*9)+1;
+			a1 = q1num1 * q1num2;
+			q2num1 = Math.floor(Math.random()*8)+2;
+			q2num2 = Math.floor(Math.random()*9)+1;
+			a2 = q2num1 * q2num2;
+			q3num1 = Math.floor(Math.random()*8)+2;
+			q3num2 = Math.floor(Math.random()*9)+1;
+			a3 = q3num1 * q3num2;
+
+			document.getElementById("q1num1").innerHTML = q1num1;
+			document.getElementById("q1num2").innerHTML = q1num2;
+			document.getElementById("q2num1").innerHTML = q2num1;
+			document.getElementById("q2num2").innerHTML = q2num2;
+			document.getElementById("q3num1").innerHTML = q3num1;
+			document.getElementById("q3num2").innerHTML = q3num2;
+
+			beginning = new Date();
+		}
+		function compare_answer(){
+			ending = new Date();
+
+			var ans1 = document.getElementById("q1").value;
+			if(ans1 != q1num1*q1num2){
+				alert("Quiz1 DEATH");
+				return false;
+			}
+			var ans2 = document.getElementById("q2").value;
+			if(ans2 != q2num1*q2num2){
+				alert("Quiz2 DEATH");
+				return false;
+			}
+			var ans3 = document.getElementById("q3").value;
+			if(ans3 != q3num1*q3num2){
+				alert("Quiz3 DEATH");
+				return false;
+			}
+			document.getElementById("result").innerHTML = (ending - beginning) / 1000;
+		}
+
+		var startBtn = document.getElementById("startBtn");
+		startBtn.addEventListener("click", make_quiz);
+
+		var finishBtn = document.getElementById("finishBtn");
+		finishBtn.addEventListener("click", compare_answer);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>03_eventListener.html</title>
+	<style>
+		#target {
+			font-size: 2em;
+			width: 300px;
+			height: 200px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<p id="target">Click Here!!!</p>
+	<script>
+		// document.getElementById("target").addEventListener("dblclick", myFunction);
+		document.getElementById("target").addEventListener("click", myFunction);
+
+		function myFunction(){
+			document.getElementById("target").innerHTML = "Well Done!! Fighting!!"
+		}
+	</script>
+</body>
+</html>

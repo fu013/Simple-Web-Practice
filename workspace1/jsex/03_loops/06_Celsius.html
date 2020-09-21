@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		table{
+			border-collapse: collapse;
+		}
+		th, td{
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+
+	<script>
+		var celsius= 100;
+
+		document.write("<table>" + "<tr>" + "<th>" + "섭씨" + "</th>" + "<th>" + "화씨" + "</th>"  + "</tr>" + "</table>");
+		while(celsius >= -20){
+			var Fahrenheit = ((9/5)*celsius) + 32;
+			var x = Fahrenheit.toFixed(1);
+
+			document.write("<table>" + "<tr>" + "<td>" + celsius + "</td>" + "<td>" + x + "°" + "</td>"  + "</tr>" + "</table>");
+			celsius--;
+		}
+
+	</script>
+</body>
+</html>
+
+<!-- innerHTML은 추가하기 -->

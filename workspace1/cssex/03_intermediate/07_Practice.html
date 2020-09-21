@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <style>
+      body{
+         margin:0;
+      }
+      #box1{
+         width: 100%;
+         height: 70px;
+         background-color: purple;
+      }
+      #box1 h1{
+         margin:0;
+         text-align: center;
+      }
+      #box2{
+         height: 50px;
+         background-color: pink;
+         overflow: hidden;
+      }
+      #box2 ul{
+         word-spacing: 20px;
+         font-size: 30px;
+         margin:0;
+         text-align: center;
+      }
+      #box2 ul li{
+         display: inline;
+      }
+      #box2 ul li a{
+         text-decoration: none;
+         padding:10px;
+      }
+      #box2 ul li a:hover{
+         background-color: yellow;
+         text-decoration: underline;
+      }
+      #box3{
+         float: left;
+         width: 30%;
+         height: 500px;
+         background-color: orange;
+      }
+      #box3 p{
+         margin:0;
+      }
+      #box3 img{
+         width: 100px;
+         height: 100px;
+      }
+      #box4{
+         float: left;
+         width: 40%;
+         height: 500px;
+         background-color: yellow;
+      }
+      #box3 fieldset{
+         margin-left: 30px;
+         margin-top: 30px;
+         margin-right: 30px;
+      }
+      #box5{
+         float: left;
+         position: relative;
+         background-color: green;
+         width: 100%;
+         height: 50px;
+         opacity: 0.5;
+      }
+      #box5 h2{
+         position: absolute;
+         margin:0;
+         top:50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         color:white;
+      }
+   </style>
+</head>
+<body>
+   <div id="box1"><h1>My Blog Page</h1></div>
+   <div id="box2">
+      <ul>
+         <li><a href="">HTML5</a></li>
+         <li><a href="">CSS3</a></li>
+         <li><a href="">JS</a></li>
+         <li><a href="">MORE</a></li>
+      </ul>
+   </div>
+   <div id="box3">
+      <p style="font-weight: bold; font-size: 40px;">Links</p>
+      <ul>
+         <li><a href="">W3C</a></li>
+         <li><a href="">123</a></li>
+         <li><a href="">123</a></li><br>
+         <li style="list-style-type: none"><img src="../../Images/will.jpg"></li>
+         <li style="list-style-type: none">HongGilDong</li>
+      </ul>
+   </div>
+   <div id="box4">
+      <p style="font-weight: bold; font-size: 39px; margin-top:10px; margin-left: 3%; margin-right: 3%;">Semantic Tag</p>
+      <p style="margin-left: 3%; margin-right: 3%;">But behind the scenes, a well-established and stress-tested system made up of the White House, the Senate and a constellation of outside conservative judicial groups stands ready to replace her if she steps down before the presidential election.</p>
+      <p style="font-weight: bold; font-size: 39px; margin-top:10px; margin-left: 3%; margin-right: 3%;">Semantic Tag</p>
+      <p style="margin-left: 3%; margin-right: 3%;">But behind the scenes, a well-established and stress-tested system made up of the White House, the Senate and a constellation of outside conservative judicial groups stands ready to replace her if she steps down before the presidential election.</p>
+   </div>
+   <div id="box3">
+      <fieldset>
+      <legend>Login</legend>
+      <p>ID: <input type="text" placeholder="아이디를 입력하세요"><br></p>
+      <p>PW: <input type="password" placeholder="비밀번호를 입력하세요"></p>
+      </fieldset>
+   </div>
+   <div id="box5"><h2>Copyright (c) 2019</h2></div>
+</body>
+</html>

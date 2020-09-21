@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>07_focusNblur.html</title>
+</head>
+<body>
+	<h1>onfocus, onblur</h1>
+	<form id="myForm">
+		<input type="text" id="myInput">
+	</form>
+	<script>
+		var myInput = document.getElementById("myInput");
+
+		myInput.addEventListener("focus", function(){
+			myInput.style.background = "lime";
+		});
+
+		myInput.addEventListener("blur", function(){
+			myInput.style.background = "aqua";
+		});
+	</script>
+</body>
+</html>

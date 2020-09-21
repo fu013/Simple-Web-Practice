@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" id="myNum">
+	<button onclick="box()">구구단 출력</button>
+	<p id="res"></p>
+
+<script>
+	function box(){
+		var num = document.getElementById("myNum").value;
+		var i = 1;
+		var text = "";
+
+		do{
+			var x = (i*num);
+
+			text += "<br>" + num + "*" + i + "=" + x;
+			i++;
+		}
+		while(i < 10);
+		document.getElementById("res").innerHTML = text;
+	}
+</script>
+</body>
+</html>

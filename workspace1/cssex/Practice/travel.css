@@ -1,0 +1,24 @@
+div{
+	text-align: center;
+	margin: 100px;
+}
+p{
+	margin: auto;
+	border: 8px solid black;
+	width: 200px;
+	font-weight: bold;
+	font-size: 3em;
+}
+.navi{
+	font-size: 1em;
+	color: purple;
+}
+a{
+	color: purple;
+	font-size: 1.5em;
+	text-decoration: none;
+	margin-right: 20px;
+}
+.selected{
+	font-weight: bold;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!-- <button onclick="box()">눌러</button> -->
+	<h3>HTML 점수 입력하세요!<input type="number" id="myNum1"></h3>
+	<h3>CSS 점수 입력하세요!<input type="number" id="myNum2"></h3>
+	<h3>JS 점수 입력하세요!<input type="number" id="myNum3"></h3>
+	<h3>PHP 점수 입력하세요!<input type="number" id="myNum4"></h3>
+	<h3>DB 점수 입력하세요!<input type="number" id="myNum5"></h3>
+	<button onclick="box()">눌러봐!</button>
+	<h1 id ="demo"></h1>
+
+	<script>
+
+		function box(){
+			var HTML = document.getElementById("myNum1").value;
+			var CSS = document.getElementById("myNum2").value;
+			var JS = document.getElementById("myNum3").value;
+			var PHP = document.getElementById("myNum4").value;
+			var DB = document.getElementById("myNum5").value;
+			var total = Number(HTML) + Number(CSS) + Number(JS) + Number(PHP) + Number(DB);
+			var average = total / 5;
+			average1 = average / 10;
+			average2 = parseInt(average1);
+
+			switch(average2){
+				case 10:
+				case 9:
+				result = "A";
+				break;
+
+				case 8:
+				result = "B";
+				break;
+
+				case 7:
+				result = "C";
+				break;
+
+				case 6:
+				case 1:
+				result = "F";
+				break;
+			}
+			document.getElementById("demo").innerHTML = result;
+		}
+		// box();
+	</script>
+</body>
+</html>

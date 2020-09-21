@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+
+<?php 
+$now_year = 2019;
+$now_month = 11;
+$now_day = 5;
+ $birth_year = 1996;
+ $birth_month = 10;
+ $birth_day = 16;
+
+ if ($birth_month < $now_month) 
+ 	$age = $now_year - $birth_year;
+elseif ($birth_month == $now_month)
+	{
+		if ($birth_day <= $now_month)
+			$age = $now_year - $birth_year;
+		else
+			$age = $now_year - $birth_year -1;
+	}	
+	else
+		$age = $now. - $birth_year-1;
+
+
+	echo "오늘날짜 : $now_year 년 $now_month 월 $now_day 일 <br>";
+	echo "출생 연월일 : $birth_year년 $birth_month 월 $birth_day 일 <br>";
+	echo "만 나이 : $age 세";
+
+
+?>

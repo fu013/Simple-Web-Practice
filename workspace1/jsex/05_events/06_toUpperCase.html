@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>06_toUpperCase.html</title>
+</head>
+<body>
+	ID :  <input type="text" id="myid" placeholder="Lowercase please!">
+	<script>
+		var target = document.getElementById("myid");
+
+		target.addEventListener("keyup", function(){
+			target.value = target.value.toUpperCase();
+		});
+	</script>
+</body>
+</html>

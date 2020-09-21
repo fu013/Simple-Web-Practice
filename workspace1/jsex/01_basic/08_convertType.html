@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>08_convertType.html</title>
+</head>
+<body>
+	<script>
+		var num1 = 12345;
+		var num2 = 56789;
+		var strNum1 = "12345";
+		var strNum2 = "56789";
+
+		var convertStrNum = 0;
+		var convertNumToStr = "";
+
+		var result1 = 0;
+		var result2 = "";
+		var result3 = "";
+
+		// result1 은 숫자계산으로 
+		result1 = num1 + Number(strNum1);
+		result3 = Number(strNum1) + Number(strNum2);
+
+		// result2 는 문자연결로 
+		result2 = String(num1) + String(num2);
+
+		document.write("<h1>숫자계산 : " + result1 + "</h1>");
+		document.write("<h1>문자계산 : " + result2 + "</h1>");
+		document.write("<h1>숫자계산 : " + result3 + "</h1>");
+	</script>
+</body>
+</html>

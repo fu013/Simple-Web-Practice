@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>05_pseudoSelector.html</title>
+	<style>
+		input:disabled { background-color: #090909; }
+		input:enabled { background-color: #b404b4; }
+		input[type="number"]:focus {background-color: #0f0;}
+		input[type="password"]:focus {background-color: #0f0;}
+		/*ul li:first-child {background-color: #090909; color: #fff;}*/
+		#first li:first-child {background-color: black; color: #fff;}
+		#second li:last-child {background-color: red; color: white;}
+		/*ul태그에 퍼스트 차일드는 첫번째 라는 얘기  첫번째 자녀가 아니라 첫번째를 찾아라*/
+		/*ul:first_child ul li:first-child 첫번째지모간애가 뭐냐 */
+		
+		#third li:nth-child(2n+1) {background-color: yellow;}
+		#third li:nth-child(2n) {background-color: red;}
+		#third li:nth-child(7) {background-color: blue;}
+		#first li::after{ content: " -after insert what?"; }
+		#first li::before{ content: " +before insert what?"; }
+		#first li::after, #first li::before {content: "insert what?"}
+	</style>
+</head>
+<body>
+	<input type="text" name="" value="YourId" disabled>
+	<!-- disabled="disabled"랑 disalbed은 똑같음 -->
+	<input type="password" name="" enabled>
+	<input type="number">
+	<hr>
+	<ul id= "first">
+		<li>First li element</li>
+		<li>First li element</li>
+		<li>First li element</li>
+		<li>First li element</li>
+		<li>First li element</li>
+	</ul>
+	<ul id= "second">
+		<li>First li element</li>
+		<li>First li element</li>
+		<li>First li element</li>
+		<li>First li element</li>
+		<li>First li element</li>
+	</ul>
+	<ul id="third">
+		<li>Odd li element</li>
+		<li>Even li element</li>
+		<li>Odd li element</li>
+		<li>Even li element</li>
+		<li>Odd li element</li>
+		<li>Even li element</li>
+		<li>Odd li element</li>
+		<li>Even li element</li>
+		<li>Odd li element</li>
+		<li>Even li element</li>
+		<li>Odd li element</li>
+		<li>Even li element</li>
+	</ul>
+</body>
+</html>

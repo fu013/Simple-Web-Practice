@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>01_classSelector.html</title>
+	<style>
+		p {color: red;}
+		.a {background-color: green; font-size: 46px; width: 100%;}
+		.a .b {background-color: blue; font-size: 26px; width: 50%;}
+		.a .b .c {background-color: yellow; font-size: 16px; width: 25%;}
+		p.d {color: aqua;}
+		h3 .d{color: purple;}
+	</style>
+</head>
+
+<body>
+	<!-- htp://yourid.dothome.co.kr/cssex/01_selector/01_classSelector.html -->
+	<!-- 	<p>Selector Exercise</p>
+	<p class="a">Class A</p>
+	<p class="a b">Class A Class B</p>
+	<p class="a b c">Class A Class B Class C</p> -->
+
+	<p>Selector Exercise</p>
+	<div class="a">Class A
+		<div class="b">Class B
+			<div class="c">Class C</div>
+		</div>
+	</div>
+	<p class="d">what is difference between selector with space and beside of?</p>
+	<h1 class="d">Combination class selectors is very complicated! </h1>
+	<h3>Selector<span class="d"> with </span> space</h3>
+
+</body>
+</html>

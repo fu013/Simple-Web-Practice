@@ -1,0 +1,11 @@
+a{font-size: 20px; color: skyblue; text-decoration: none;}
+/*커서를 가져다 데는 것 */
+
+/*a:visited { color: skyblue; text-decoration: line-through;}*/
+
+a:active{background-color: pink;}
+a:hover {background-color: pink; text-decoration: none;}
+
+font-family: 'Lobster', cursive;
+
+/*ctrl shift h*/

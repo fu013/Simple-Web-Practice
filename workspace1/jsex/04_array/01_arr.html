@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1 id="ent"></h1>
+
+	<script>
+		// var scores = new Array("Taylor Swift","Taylor Swift", "Taylor Swift");
+
+		var scores = ["Taylor Swift","Taylor Swift", "Taylor Swift"];
+
+		// scores[0] = "TWICE";
+		// scores[1] = "BlackPink";
+		// scores[2] = "YoonMi";
+		// scores[3] = "HyunBum";
+		// scores[4] = "BTS";
+		// scores[5] = "Taylor Swift";
+
+		var text = "";
+
+		for(var i =0; i< scores.length; i++){
+			text += scores[i] + " ";
+		}
+		document.getElementById("ent").innerHTML = text;
+
+	</script>
+</body>
+</html>

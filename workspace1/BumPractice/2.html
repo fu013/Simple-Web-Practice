@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <style>
+      td{
+         height: 100px;
+         width: 100px;
+         text-align: center;
+         border:1px solid black;
+      }
+   </style>
+</head>
+<body>
+   <button onclick="box1()">전체 선택</button>
+   <button onclick="box2()">한번 선택</button>
+   <button onclick="box3()">랜덤선택</button>
+   <button onclick="box4()">다시하기</button>
+   <table id="table">
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+   </table>
+
+   <script>
+      var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+      function box1(){
+         trial=0;
+         var table1= document.getElementById("table");
+         for(var i=0; i<5; i++){
+            for(var j=0; j<5; j++){
+               table1.rows[i].cells[j].innerHTML = arr[trial];
+               trial++;
+            }
+         }
+         setTimeout(function(){alert("끝");},100);
+      }
+
+      trial2=0;
+      t2=0;
+      var i1=0;
+      var j1=0;
+      function box2(){
+         var table1= document.getElementById("table");
+         for(;;){
+            if(table1.rows[i1].cells[j1].innerHTML == arr[trial2]){
+               j1++;
+               trial2++;
+               if(j1==5){
+                  i1++;
+                  j1=0;
+               }
+            }
+            else{
+               break;
+            }
+         }
+         table1.rows[i1].cells[j1].innerHTML = arr[trial2];
+         trial2++;
+         j1++;
+         if(j1==5){
+            i1++;
+            j1=0;
+         }
+         t2++;
+
+         var t3 = trial3;
+         var t22 = t2+t3;
+         if(trial2==25 || t22==25){
+            setTimeout(function(){alert("끝");},100);
+         }
+      }
+
+      var arr1=[];
+      for(var i=0;i<25;i++){
+         var rn = Math.floor(Math.random()*25);
+         arr1[i]= rn;
+         for(var j=0; j<i; j++){
+            if(arr1[j]==arr1[i]){
+               i--;
+               break;
+            }
+         }
+      }
+      var trial3 =0;
+      function box3(){
+         var table1 = document.getElementById("table");
+         for(;;){
+            var number = arr1[trial3];
+            // document.getElementById("res").innerHTML = arr1;
+            switch (number) {
+               case 0:
+               table1.rows[0].cells[0].innerHTML = arr[0];
+               break;
+
+               case 1:
+               table1.rows[0].cells[1].innerHTML = arr[1];
+               break;
+
+               case 2:
+               table1.rows[0].cells[2].innerHTML = arr[2];
+               break;
+
+               case 3:
+               table1.rows[0].cells[3].innerHTML = arr[3];
+               break;
+
+               case 4:
+               table1.rows[0].cells[4].innerHTML = arr[4];
+               break;
+
+               case 5:
+               table1.rows[1].cells[0].innerHTML = arr[5];
+               break;
+
+               case 6:
+               table1.rows[1].cells[1].innerHTML = arr[6];
+               break;
+
+               case 7:
+               table1.rows[1].cells[2].innerHTML = arr[7];
+               break;
+
+               case 8:
+               table1.rows[1].cells[3].innerHTML = arr[8];
+               break;
+
+               case 9:
+               table1.rows[1].cells[4].innerHTML = arr[9];
+               break;
+
+               case 10:
+               table1.rows[2].cells[0].innerHTML = arr[10];
+               break;
+
+               case 11:
+               table1.rows[2].cells[1].innerHTML = arr[11];
+               break;
+
+               case 12:
+               table1.rows[2].cells[2].innerHTML = arr[12];
+               break;
+
+               case 13:
+               table1.rows[2].cells[3].innerHTML = arr[13];
+               break;
+
+               case 14:
+               table1.rows[2].cells[4].innerHTML = arr[14];
+               break;
+
+               case 15:
+               table1.rows[3].cells[0].innerHTML = arr[15];
+               break;
+
+               case 16:
+               table1.rows[3].cells[1].innerHTML = arr[16];
+               break;
+
+               case 17:
+               table1.rows[3].cells[2].innerHTML = arr[17];
+               break;
+
+               case 18:
+               table1.rows[3].cells[3].innerHTML = arr[18];
+               break;
+
+               case 19:
+               table1.rows[3].cells[4].innerHTML = arr[19];
+               break;
+
+               case 20:
+               table1.rows[4].cells[0].innerHTML = arr[20];
+               break;
+
+               case 21:
+               table1.rows[4].cells[1].innerHTML = arr[21];
+               break;
+
+               case 22:
+               table1.rows[4].cells[2].innerHTML = arr[22];
+               break;
+
+               case 23:
+               table1.rows[4].cells[3].innerHTML = arr[23];
+               break;
+
+               case 24:
+               table1.rows[4].cells[4].innerHTML = arr[24];
+               break;
+            }
+            break;
+         }
+         trial3++;
+         if(trial3==25){
+            setTimeout(function(){alert("끝");},100);
+         }
+      }
+
+      function box4(){
+         var table1 = document.getElementById("table"); 
+         for(var i=0; i<5;i++){
+            for(var j=0;j<5;j++){
+               table1.rows[i].cells[j].innerHTML = "";
+            }
+         }
+         trial=0;
+         trial2=0;
+         trial3=0;
+         i1=0;
+         j1=0;
+         t2=0;
+      }
+   </script>
+</body>
+</html>

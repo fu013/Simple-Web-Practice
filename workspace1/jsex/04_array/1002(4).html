@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>숫자 야구 게임</h1>
+	<h4>숫자를 입력하고 시작버튼을 3번 누르세요!</h4>
+	<input type="number" id="myNum" placeholder="답을 입력하세요">
+	<button onclick="box()">시작</button>
+	<p id="res"></p>
+	<p id="res2"></p>
+	<p id="an"></p>
+	<p id="s"></p>
+	<p id="b"></p>
+	<p id="tr"></p>
+
+	<script>
+		var trial = 10;
+		var arr = [];
+		for(var i=0; i<3; i++){
+			arr[i] = Math.floor(Math.random()*10);
+			for(var j=0; j<i;j++){
+				if(arr[j] == arr[i]){
+					i--;
+					break;
+				}
+			}
+		}
+		// var answer = String(arr[0]) + String(arr[1]) + String(arr[2]);
+		// document.getElementById("res").innerHTML = answer;		
+
+		document.getElementById("res").innerHTML = "답: " + arr;
+
+		var z =0;
+		var num = [];
+
+		function box(){
+			num[z] = document.getElementById("myNum").value;
+
+			z++;
+			if(z<3){
+				num[z] = document.getElementById("myNum").value;
+			}
+			else{
+				if(trial>0){
+					document.getElementById("res2").innerHTML += num +" ";
+					for(;;){
+						var s = 0;
+						var b = 0;
+						for(var i=0; i<3; i++){
+							for(var j=i; j<=i; j++){
+								if(arr[i] == num[j]){
+									s++;
+								}
+							}
+							for(var k=0; k<3; k++){
+								if(arr[i] == num[k]){
+									b++;
+									if(i==k){
+										b--;
+									}
+								}
+							}
+						}
+						switch(s){
+							case 3:
+							document.getElementById("s").innerHTML += 3 + "s ";
+							break;
+
+							case 2:
+							document.getElementById("s").innerHTML += 2 + "s ";
+							break;
+
+							case 1:
+							document.getElementById("s").innerHTML += 1 + "s ";
+							break;
+
+							default:
+							document.getElementById("s").innerHTML += 0 + "s ";
+						}
+						switch(b){
+							case 3:
+							document.getElementById("b").innerHTML += 3 + "b ";
+							break;
+
+							case 2:
+							document.getElementById("b").innerHTML += 2 + "b ";
+							break;
+
+							case 1:
+							document.getElementById("b").innerHTML += 1 + "b ";
+							break;
+
+							default:
+							document.getElementById("b").innerHTML += 0 + "b ";
+						}
+						if(s == 3){
+							document.getElementById("an").innerHTML = "정답!!!";
+							break;
+						}
+						else{
+							z=0;
+							break;
+						}
+					}
+					trial--;
+					document.getElementById("tr").innerHTML = "남은 시도 횟수" + trial;
+				}
+				else{
+				document.getElementById("tr").innerHTML = "게임오버";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

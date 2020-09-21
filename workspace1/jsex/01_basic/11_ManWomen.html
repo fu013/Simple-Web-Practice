@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		p{
+			/*display: inline;*/
+		}
+	</style>
+</head>
+<body>
+	<p id= "number1"></p>
+	<p id= "number2"></p>
+	<script>
+		var num = "950624-1111111";
+		var age = num.substr(0, 2);
+		var sex = num.substr(7, 1);
+		var o = 1;
+		var x = 21;
+
+		if (age >= 00 && age <= 19) {
+			for(z=19; z>age; z--){
+				o += 1;
+			}
+			document.getElementById("number1").innerHTML = + o + "살";
+		}
+		else if(age <=99 && age>=20){
+			for(z= 99;  z>age; z--){
+				x += 1;
+			}
+			document.getElementById("number1").innerHTML = + x + "살";
+		}
+		
+		if (sex == 1 || sex == 3) {
+			document.getElementById("number2").innerHTML = "남자";
+		}
+		else if (sex == 2 || sex ==4) {
+			document.getElementById("number2").innerHTML = "여자";
+		}
+
+		// document.getElementById("number1").innerHTML = age;
+		// document.getElementById("number2").innerHTML = sex;
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+   <input type="string" id="myName" placeholder="사원이름">
+   <input type="string" id="myAdd" placeholder="사원주소">
+   <button onclick="box()">출력</button>
+   <p id="idi"></p>
+   <p id="result1"></p>
+   <p id="result2"></p>
+   <p id="pos"></p>
+   <p id="money"></p>
+
+   <script>
+      function box(){
+         var name = document.getElementById("myName").value;
+         var address = document.getElementById("myAdd").value;
+
+         id = Math.floor(Math.random()*5)+1;
+         document.getElementById("idi").innerHTML = "ID: " + id;
+         document.getElementById("result1").innerHTML = "이름: " + name;
+         document.getElementById("result2").innerHTML = "주소: " + address;
+         if(id ==1){
+            position = "부장";
+            var daymoney =100000;
+            salary = daymoney * 30;
+         }
+         else if(id ==2){
+            position = "차장";
+            var daymoney = Math.floor((Math.random() * (80000 - 70000 + 1)) + 70000);
+            salary = daymoney;
+         }
+         else if(id ==3){
+            position = "과장";
+            var daymoney = Math.floor((Math.random() * (60000 - 50000 + 1)) + 50000);
+            salary = daymoney;
+         }
+         else if(id ==4){
+            position = "대리";
+            var daymoney = Math.floor((Math.random() * (40000 - 30000 + 1)) + 30000);
+            salary = daymoney;
+         }
+         else{
+            position = "사원";
+               var daymoney = Math.floor((Math.random() * (20000 - 10000 + 1)) + 10000);
+               salary = daymoney;  
+         }
+         document.getElementById("pos").innerHTML = "직위: " + position;
+         document.getElementById("money").innerHTML = "월급: " + salary;
+      }
+   </script>
+</body>
+</html>

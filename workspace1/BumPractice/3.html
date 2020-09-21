@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+   <input type="number" id="myNum">
+   <button onclick="box()">윤년 확인</button>
+   <p id="res"></p>
+
+   <script>
+      function box(){
+         var x = document.getElementById("myNum").value;
+         // var x = parseInt(year);
+
+         if(x <= 0){
+            document.getElementById("res").innerHTML = "다시입력하세요!!";
+         }
+         else if(x % 4 == 0){
+            if(x % 100 != 0){
+               document.getElementById("res").innerHTML = "윤년입니다.";
+            }
+            else{
+               if(x % 400 == 0){
+                  document.getElementById("res").innerHTML = "윤년입니다.";
+               }
+            }
+         }
+         else{
+            var before;
+            var after;
+            z = x % 4;
+            if(z == 3){
+               before = z;
+               after = 1;
+            }
+            else if(z == 2){
+               before = 2;
+               after = 2;
+            }
+            else{
+               before = 1;
+               after = 3;
+            }
+            document.getElementById("res").innerHTML = "윤년이 아닙니다." + "<br>" + "가까운 윤년: " + after + "년후" + "<br>" + "가까운 윤년: " + before + "년전";
+         }
+      }
+   </script>
+</body>
+</html>
